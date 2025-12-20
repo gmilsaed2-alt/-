@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- ... باقي الhead كما هو ... -->
+</head>
+<body>
+  <!-- ... باقي الجسم كما هو ... -->
+
+  <!-- Products Grid مع صور حقيقية -->
+  <section id="products" class="products container" aria-labelledby="products-title">
+    <h2 id="products-title">🍽️ قائمة المنتجات</h2>
+    
+    <div class="loading-indicator" id="loading" aria-live="polite" aria-busy="true" hidden>
+      <div class="spinner"></div>
+      جاري تحميل المنتجات...
+    </div>
+    
+    <div id="product-container" class="product-grid" aria-live="polite" role="list">
+      <!-- المنتجات ستُملأ بواسطة JavaScript، لكن سأضيف أمثلة مع صور حقيقية -->
+      
+      <!-- العصائر -->
+      <div class="product-card" role="listitem" data-category="عصائر" data-id="1">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1621495701166-5fc7e558f6f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="عصير برتقال طازج مع قطع فواكه"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/10/09/14/00/juice-1726274_640.png'"
+          >
+          <span class="product-badge">🆕 جديد</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">عصير برتقال طازج</h3>
+          <p class="product-desc">عصير برتقال طبيعي 100% بدون إضافات</p>
+          <div class="product-meta">
+            <span class="product-price">1500 ريال</span>
+            <button class="btn-add-to-cart" data-id="1" aria-label="إضافة عصير برتقال طازج إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="عصائر" data-id="2">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="عصير فراولة أحمر طازج"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2017/01/20/14/59/orange-1995044_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">عصير فراولة</h3>
+          <p class="product-desc">عصير فراولة طبيعي مع قطع الفاكهة</p>
+          <div class="product-meta">
+            <span class="product-price">1800 ريال</span>
+            <button class="btn-add-to-cart" data-id="2" aria-label="إضافة عصير فراولة إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="عصائر" data-id="3">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1603561596112-0a132a716fcf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="عصير مانجو أصفر طازج"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2017/01/31/09/30/raspberry-2023404_640.jpg'"
+          >
+          <span class="product-badge">🔥 الأكثر مبيعاً</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">عصير مانجو</h3>
+          <p class="product-desc">عصير مانجو كامل النضج والطعم</p>
+          <div class="product-meta">
+            <span class="product-price">2000 ريال</span>
+            <button class="btn-add-to-cart" data-id="3" aria-label="إضافة عصير مانجو إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="عصائر" data-id="4">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" 
+            alt="عصير أفوكادو كريمي"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/09/04/20/14/avocado-1644931_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">عصير أفوكادو</h3>
+          <p class="product-desc">عصير أفوكادو كريمي مع الحليب</p>
+          <div class="product-meta">
+            <span class="product-price">2200 ريال</span>
+            <button class="btn-add-to-cart" data-id="4" aria-label="إضافة عصير أفوكادو إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- سندوتشات -->
+      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="5">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="ساندويتش برجر لحم مع خضار"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/03/05/19/37/appetite-1238459_640.jpg'"
+          >
+          <span class="product-badge">👍 مفضل</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">برجر لحم مشوي</h3>
+          <p class="product-desc">برجر لحم مع خضار طازجة وصوص خاص</p>
+          <div class="product-meta">
+            <span class="product-price">3500 ريال</span>
+            <button class="btn-add-to-cart" data-id="5" aria-label="إضافة برجر لحم مشوي إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="6">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1550317138-10000687a72b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="ساندويتش دجاج مشوي"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">ساندويتش دجاج مشوي</h3>
+          <p class="product-desc">دجاج مشوي مع الخضار والمايونيز</p>
+          <div class="product-meta">
+            <span class="product-price">2800 ريال</span>
+            <button class="btn-add-to-cart" data-id="6" aria-label="إضافة ساندويتش دجاج مشوي إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="7">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="بيتزا مع جبن وصلصة"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_640.jpg'"
+          >
+          <span class="product-badge">🍕 خاص</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">بيتزا جبن</h3>
+          <p class="product-desc">بيتزا مع جبن موزاريلا وصلصة الطماطم</p>
+          <div class="product-meta">
+            <span class="product-price">4000 ريال</span>
+            <button class="btn-add-to-cart" data-id="7" aria-label="إضافة بيتزا جبن إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="8">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="ساندويتش شاورما لحم"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/18/15/46/food-1835473_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">شاورما لحم</h3>
+          <p class="product-desc">شاورما لحم مع خضار وصوص الثوم</p>
+          <div class="product-meta">
+            <span class="product-price">2500 ريال</span>
+            <button class="btn-add-to-cart" data-id="8" aria-label="إضافة شاورما لحم إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- الحلويات -->
+      <div class="product-card" role="listitem" data-category="حلويات" data-id="9">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="كيك شوكولاتة"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/22/18/52/cake-1850011_640.jpg'"
+          >
+          <span class="product-badge">🍰 شهي</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">كيك شوكولاتة</h3>
+          <p class="product-desc">كيك شوكولاتة رطب مع طبقة كريمية</p>
+          <div class="product-meta">
+            <span class="product-price">1800 ريال</span>
+            <button class="btn-add-to-cart" data-id="9" aria-label="إضافة كيك شوكولاتة إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="حلويات" data-id="10">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="آيس كريم فانيليا"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2018/08/16/22/59/ice-cream-3611698_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">آيس كريم فانيليا</h3>
+          <p class="product-desc">آيس كريم فانيليا مع توبينج شوكولاتة</p>
+          <div class="product-meta">
+            <span class="product-price">1200 ريال</span>
+            <button class="btn-add-to-cart" data-id="10" aria-label="إضافة آيس كريم فانيليا إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- المشروبات الساخنة -->
+      <div class="product-card" role="listitem" data-category="ساخنة" data-id="11">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="قهوة إسبريسو"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2015/10/12/14/54/coffee-983955_640.jpg'"
+          >
+          <span class="product-badge">☕ متميز</span>
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">قهوة إسبريسو</h3>
+          <p class="product-desc">قهوة إسبريسو إيطالية مركزة</p>
+          <div class="product-meta">
+            <span class="product-price">1000 ريال</span>
+            <button class="btn-add-to-cart" data-id="11" aria-label="إضافة قهوة إسبريسو إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" role="listitem" data-category="ساخنة" data-id="12">
+        <div class="product-image">
+          <img 
+            src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+            alt="شاي أخضر"
+            loading="lazy"
+            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/29/13/04/beverage-1869716_640.jpg'"
+          >
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">شاي أخضر</h3>
+          <p class="product-desc">شاي أخضر طبيعي مع نعناع</p>
+          <div class="product-meta">
+            <span class="product-price">800 ريال</span>
+            <button class="btn-add-to-cart" data-id="12" aria-label="إضافة شاي أخضر إلى السلة">
+              <span>+</span> إضافة
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="no-products" class="no-products" hidden>
+      <p>لا توجد منتجات في هذا التصنيف حالياً.</p>
+    </div>
+  </section>
+
+  <!-- باقي الصفحة كما هي ... -->
+</body>
+            </html>
