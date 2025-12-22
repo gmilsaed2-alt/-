@@ -1,291 +1,2431 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <!-- ... باقي الhead كما هو ... -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#38C172">
+  <title>كافتيريا الخير | عصائر وسندوتشات فاخرة</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      direction: rtl;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header */
+    .app-header {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #38C172;
+    }
+
+    .brand-mark {
+      font-size: 2rem;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: #38C172;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2d9959;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+
+    .btn-cta {
+      background: linear-gradient(135deg, #38C172, #2d9959);
+      color: white;
+      font-size: 1.1rem;
+      padding: 12px 30px;
+    }
+
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #c0392b;
+    }
+
+    .btn-warning {
+      background: #f39c12;
+      color: white;
+    }
+
+    .btn-warning:hover {
+      background: #d68910;
+    }
+
+    /* Hero Section - صورة فواكه جديدة */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    /* Promo Card */
+    .promo-card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px auto;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .promo-card h2 {
+      color: #38C172;
+      margin-bottom: 10px;
+    }
+
+    .promo-card p {
+      color: #666;
+    }
+
+    /* Categories */
+    .categories-scroll {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 20px 0;
+      margin: 20px 0;
+      scrollbar-width: none;
+    }
+
+    .categories-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-btn {
+      padding: 12px 25px;
+      background: white;
+      border: 2px solid #38C172;
+      border-radius: 25px;
+      color: #38C172;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+      background: #38C172;
+      color: white;
+    }
+
+    /* Products Grid */
+    .products {
+      padding: 50px 0;
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-title {
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .product-desc {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #38C172;
+    }
+
+    .btn-add-to-cart {
+      background: #38C172;
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .btn-add-to-cart:hover {
+      background: #2d9959;
+    }
+
+    /* Admin Controls */
+    .admin-controls {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: flex;
+      gap: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .product-card:hover .admin-controls {
+      opacity: 1;
+    }
+
+    .admin-btn {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .edit-btn {
+      background: #3498db;
+      color: white;
+    }
+
+    .edit-btn:hover {
+      background: #2980b9;
+    }
+
+    .delete-btn {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .delete-btn:hover {
+      background: #c0392b;
+    }
+
+    /* Admin Panel */
+    .admin-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .admin-panel.active {
+      display: flex;
+    }
+
+    .admin-content {
+      background: white;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #38C172;
+    }
+
+    .admin-title {
+      color: #38C172;
+      font-size: 1.8rem;
+    }
+
+    .close-admin {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #666;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .close-admin:hover {
+      background: #f8f9fa;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 10px 25px;
+      background: none;
+      border: none;
+      color: #666;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: #38C172;
+      color: white;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      outline: none;
+      border-color: #38C172;
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Image Upload */
+    .image-upload-container {
+      border: 2px dashed #ddd;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .image-upload-container:hover {
+      border-color: #38C172;
+      background: #f8f9fa;
+    }
+
+    .upload-icon {
+      font-size: 3rem;
+      color: #38C172;
+      margin-bottom: 10px;
+    }
+
+    .upload-text {
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .upload-button {
+      background: #38C172;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .image-preview {
+      max-width: 200px;
+      max-height: 150px;
+      border-radius: 8px;
+      margin: 10px auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .image-preview-container {
+      display: none;
+      text-align: center;
+    }
+
+    .image-preview-container.active {
+      display: block;
+    }
+
+    /* Products List */
+    .products-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 10px;
+    }
+
+    .product-item {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 4px solid #38C172;
+    }
+
+    .product-item-info h4 {
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .product-item-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .product-item-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Bulk Edit */
+    .bulk-edit-container {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .bulk-actions {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .price-update-form {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .price-update-input {
+      width: 150px;
+      padding: 8px 12px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+    }
+
+    /* Footer */
+    .app-footer {
+      background: #2c3e50;
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h4 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      color: #38C172;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #38C172;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #34495e;
+      color: #95a5a6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+      
+      .promo-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .header-actions {
+        flex-direction: column;
+      }
+      
+      .admin-content {
+        padding: 20px;
+        max-width: 95%;
+      }
+      
+      .tabs {
+        flex-wrap: wrap;
+      }
+      
+      .product-item {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+      
+      .bulk-actions {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero {
+        padding: 60px 0;
+      }
+      
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Loading State */
+    .loading {
+      text-align: center;
+      padding: 40px;
+      font-size: 1.2rem;
+      color: #666;
+    }
+
+    /* Utility Classes */
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-20 {
+      margin-top: 20px;
+    }
+
+    .mb-20 {
+      margin-bottom: 20px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #38C172;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 4000;
+      font-weight: 600;
+      animation: slideIn 0.3s ease;
+    }
+
+    .notification.error {
+      background: #e74c3c;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideOut {
+      from {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateX(-50%) translateY(-20px);
+        opacity: 0;
+      }
+    }
+
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #38C172;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* إدارة المقدمة */
+    .hero-management {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero-preview {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .hero-preview h3 {
+      margin-bottom: 15px;
+      color: #38C172;
+    }
+
+    .hero-preview-img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 <body>
-  <!-- ... باقي الجسم كما هو ... -->
-
-  <!-- Products Grid مع صور حقيقية -->
-  <section id="products" class="products container" aria-labelledby="products-title">
-    <h2 id="products-title">🍽️ قائمة المنتجات</h2>
-    
-    <div class="loading-indicator" id="loading" aria-live="polite" aria-busy="true" hidden>
-      <div class="spinner"></div>
-      جاري تحميل المنتجات...
+  <!-- Header -->
+  <header class="app-header">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <div class="brand">
+        <span class="brand-mark">🥤</span>
+        <span class="brand-title">كافتيريا الخير</span>
+      </div>
+      <div class="header-actions">
+        <button id="adminLoginBtn" class="btn btn-secondary">
+          🔧 لوحة التحكم
+        </button>
+        <button id="openCartBtn" class="btn btn-primary">
+          🛒 السلة (<span id="cartCount">0</span>)
+        </button>
+      </div>
     </div>
-    
-    <div id="product-container" class="product-grid" aria-live="polite" role="list">
-      <!-- المنتجات ستُملأ بواسطة JavaScript، لكن سأضيف أمثلة مع صور حقيقية -->
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section - يتم التحكم فيها من لوحة التحكم -->
+    <section class="hero" id="heroSection">
+      <div class="container">
+        <h1 id="heroTitle">استمتع بتجربة عصائر فاخرة لا تُنسى! 🍹</h1>
+        <p id="heroText">اكتشف عالمًا من النكهات الراقية مع عصائرنا الطازجة الفاخرة وسندوتشاتنا المميزة - جودة لا مثيل لها في كل قطرة وقضمة!</p>
+        <a href="#products" class="btn btn-cta" id="heroButton">ابدأ تجربتك الفاخرة الآن</a>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section class="container">
+      <div class="promo-card">
+        <div>
+          <h2>🏢 الفرع الرئيسي</h2>
+          <p id="locationText">اليمن – تعز – دمنة خدير – الكمب – أمام الملك فون – جوار صيدلية العفيفي</p>
+        </div>
+        <div>
+          <a href="https://maps.app.goo.gl/dGWK3qgztax22zYTA" target="_blank" class="btn btn-primary">
+            🗺️ افتح في خرائط Google
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="container">
+      <div class="categories-scroll" id="categories">
+        <!-- Categories will be loaded by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products container">
+      <h2>🍽️ قائمة المنتجات</h2>
+      <div id="loading" class="loading">
+        جاري تحميل المنتجات...
+      </div>
+      <div id="product-container" class="product-grid">
+        <!-- Products will be loaded by JavaScript -->
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container" style="margin: 50px 0;">
+      <div id="featuresSection" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+        <!-- Features will be loaded by JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>📞 تواصل معنا</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+967730528609">📞 اتصال: +967730528609</a></li>
+            <li><a href="https://wa.me/967730528609" target="_blank">💬 واتساب</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>📍 العنوان</h4>
+          <p id="footerAddress">اليمن – تعز – دمنة خدير – الكمب</p>
+          <p>أمام الملك فون – جوار صيدلية العفيفي</p>
+          <a href="https://maps.app.goo.gl/dGWK3qgztax22zYTA" target="_blank" class="btn btn-primary" style="margin-top: 10px; display: inline-block;">
+            🗺️ عرض على الخريطة
+          </a>
+        </div>
+        <div>
+          <h4>ℹ️ حول التطبيق</h4>
+          <p>تجربة طلب فاخرة ومبسطة لعصائر وسندوتشات طازجة.</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2024 كافتيريا الخير. جميع الحقوق محفوظة.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Panel -->
+  <div id="adminPanel" class="admin-panel">
+    <div class="admin-content">
+      <div class="admin-header">
+        <h2 class="admin-title">🔧 لوحة تحكم المالك</h2>
+        <button class="close-admin" id="closeAdminBtn">✕</button>
+      </div>
       
-      <!-- العصائر -->
-      <div class="product-card" role="listitem" data-category="عصائر" data-id="1">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1621495701166-5fc7e558f6f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="عصير برتقال طازج مع قطع فواكه"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/10/09/14/00/juice-1726274_640.png'"
-          >
-          <span class="product-badge">🆕 جديد</span>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="totalProducts">0</div>
+          <div class="stat-label">إجمالي المنتجات</div>
         </div>
-        <div class="product-info">
-          <h3 class="product-title">عصير برتقال طازج</h3>
-          <p class="product-desc">عصير برتقال طبيعي 100% بدون إضافات</p>
-          <div class="product-meta">
-            <span class="product-price">1500 ريال</span>
-            <button class="btn-add-to-cart" data-id="1" aria-label="إضافة عصير برتقال طازج إلى السلة">
-              <span>+</span> إضافة
-            </button>
+        <div class="stat-card">
+          <div class="stat-value" id="totalCategories">0</div>
+          <div class="stat-label">التصنيفات</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="totalOrders">0</div>
+          <div class="stat-label">الطلبات</div>
+        </div>
+      </div>
+      
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="hero-tab">🏠 إدارة المقدمة</button>
+        <button class="tab-btn" data-tab="dashboard-tab">📊 الإحصائيات</button>
+        <button class="tab-btn" data-tab="products-tab">📦 إدارة المنتجات</button>
+        <button class="tab-btn" data-tab="bulk-tab">⚡ تعديل شامل</button>
+        <button class="tab-btn" data-tab="add-tab">➕ منتج جديد</button>
+        <button class="tab-btn" data-tab="categories-tab">🏷️ التصنيفات</button>
+      </div>
+      
+      <!-- Hero Management Tab -->
+      <div id="hero-tab" class="tab-content active">
+        <h3 style="margin-bottom: 20px; color: #333;">إدارة المقدمة والصفحة الرئيسية</h3>
+        
+        <div class="hero-management">
+          <div>
+            <h4 style="color: #38C172; margin-bottom: 15px;">تعديل المقدمة</h4>
+            <form id="heroForm">
+              <div class="form-group">
+                <label class="form-label">عنوان المقدمة</label>
+                <input type="text" class="form-input" id="heroTitleInput" placeholder="اكتب العنوان هنا">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">نص المقدمة</label>
+                <textarea class="form-textarea" id="heroTextInput" placeholder="اكتب النص هنا"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">نص زر الحث على الإجراء</label>
+                <input type="text" class="form-input" id="heroButtonInput" placeholder="نص الزر">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">صورة خلفية المقدمة</label>
+                <div class="image-upload-container" id="heroImageUpload">
+                  <div class="image-preview-container" id="heroImagePreviewContainer">
+                    <img id="heroImagePreview" class="image-preview" alt="معاينة الصورة">
+                    <button type="button" class="btn btn-danger" onclick="removeHeroImage()" style="margin-top: 10px; padding: 8px 15px;">
+                      🗑️ إزالة الصورة
+                    </button>
+                  </div>
+                  <div id="heroUploadPlaceholder">
+                    <div class="upload-icon">🏞️</div>
+                    <div class="upload-text">صورة خلفية المقدمة</div>
+                    <div class="upload-button">اختر صورة</div>
+                    <input type="file" id="heroImageFile" accept="image/*" style="display: none;">
+                  </div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">تعتيم الخلفية (0-100%)</label>
+                <input type="range" class="form-input" id="heroOpacity" min="0" max="100" value="60">
+                <span id="opacityValue">60%</span>
+              </div>
+              
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">💾 حفظ تعديلات المقدمة</button>
+            </form>
+          </div>
+          
+          <div>
+            <h4 style="color: #38C172; margin-bottom: 15px;">معاينة المقدمة</h4>
+            <div class="hero-preview">
+              <h3 id="heroPreviewTitle">استمتع بتجربة عصائر فاخرة لا تُنسى! 🍹</h3>
+              <img id="heroPreviewImage" class="hero-preview-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="معاينة">
+              <p id="heroPreviewText">اكتشف عالمًا من النكهات الراقية مع عصائرنا الطازجة الفاخرة وسندوتشاتنا المميزة - جودة لا مثيل لها في كل قطرة وقضمة!</p>
+              <button class="btn btn-cta" style="margin-top: 10px;" id="heroPreviewButton">ابدأ تجربتك الفاخرة الآن</button>
+            </div>
+          </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+          <h4 style="color: #38C172; margin-bottom: 15px;">إدارة الميزات الإضافية</h4>
+          <div id="featuresManagement">
+            <!-- Features will be managed here -->
           </div>
         </div>
       </div>
-
-      <div class="product-card" role="listitem" data-category="عصائر" data-id="2">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="عصير فراولة أحمر طازج"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2017/01/20/14/59/orange-1995044_640.jpg'"
-          >
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">عصير فراولة</h3>
-          <p class="product-desc">عصير فراولة طبيعي مع قطع الفاكهة</p>
-          <div class="product-meta">
-            <span class="product-price">1800 ريال</span>
-            <button class="btn-add-to-cart" data-id="2" aria-label="إضافة عصير فراولة إلى السلة">
-              <span>+</span> إضافة
+      
+      <!-- Dashboard Tab -->
+      <div id="dashboard-tab" class="tab-content">
+        <h3 style="margin-bottom: 20px; color: #333;">لوحة التحكم الرئيسية</h3>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+          <h4 style="color: #38C172; margin-bottom: 15px;">إجراءات سريعة</h4>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="document.querySelector('[data-tab=\"add-tab\"]').click()">
+              ➕ إضافة منتج جديد
+            </button>
+            <button class="btn btn-secondary" onclick="document.querySelector('[data-tab=\"bulk-tab\"]').click()">
+              ⚡ تعديل الأسعار
+            </button>
+            <button class="btn btn-warning" onclick="exportData()">
+              📥 تصدير البيانات
+            </button>
+            <button class="btn btn-danger" onclick="importData()">
+              📤 استيراد بيانات
             </button>
           </div>
         </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="عصائر" data-id="3">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1603561596112-0a132a716fcf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="عصير مانجو أصفر طازج"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2017/01/31/09/30/raspberry-2023404_640.jpg'"
-          >
-          <span class="product-badge">🔥 الأكثر مبيعاً</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">عصير مانجو</h3>
-          <p class="product-desc">عصير مانجو كامل النضج والطعم</p>
-          <div class="product-meta">
-            <span class="product-price">2000 ريال</span>
-            <button class="btn-add-to-cart" data-id="3" aria-label="إضافة عصير مانجو إلى السلة">
-              <span>+</span> إضافة
-            </button>
+        
+        <div style="margin-top: 30px;">
+          <h4 style="color: #38C172; margin-bottom: 15px;">تعليمات سريعة</h4>
+          <div style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <p>✅ <strong>لتغيير صورة المنتج:</strong> اختر "إدارة المنتجات" → انقر على "تعديل" → انقر على الصورة الحالية → اختر صورة جديدة</p>
+            <p>✅ <strong>لتعديل المقدمة:</strong> اختر "إدارة المقدمة" → غير العنوان والنصوص → اختر صورة جديدة → حفظ</p>
+            <p>✅ <strong>لإضافة صورة مناسبة:</strong> ابحث في Google عن صورة المنتج → احفظها → اخترها من الهاتف</p>
           </div>
         </div>
       </div>
-
-      <div class="product-card" role="listitem" data-category="عصائر" data-id="4">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" 
-            alt="عصير أفوكادو كريمي"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/09/04/20/14/avocado-1644931_640.jpg'"
-          >
+      
+      <!-- Products Management Tab -->
+      <div id="products-tab" class="tab-content">
+        <h3 style="margin-bottom: 20px; color: #333;">إدارة المنتجات</h3>
+        <div style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+          <input type="text" id="searchProducts" class="form-input" placeholder="🔍 بحث عن منتج..." style="flex: 1;">
+          <button class="btn btn-secondary" onclick="filterProducts()">بحث</button>
         </div>
-        <div class="product-info">
-          <h3 class="product-title">عصير أفوكادو</h3>
-          <p class="product-desc">عصير أفوكادو كريمي مع الحليب</p>
-          <div class="product-meta">
-            <span class="product-price">2200 ريال</span>
-            <button class="btn-add-to-cart" data-id="4" aria-label="إضافة عصير أفوكادو إلى السلة">
-              <span>+</span> إضافة
-            </button>
+        <div id="adminProductsList" class="products-list">
+          <!-- Products will be loaded here -->
+        </div>
+      </div>
+      
+      <!-- Bulk Edit Tab -->
+      <div id="bulk-tab" class="tab-content">
+        <h3 style="margin-bottom: 20px; color: #333;">تعديل شامل للمنتجات</h3>
+        
+        <div class="bulk-edit-container">
+          <h4 style="color: #38C172; margin-bottom: 15px;">تحديث أسعار مجموعة منتجات</h4>
+          
+          <div class="bulk-actions">
+            <select id="bulkCategory" class="form-select" style="flex: 1;">
+              <option value="">جميع التصنيفات</option>
+              <!-- Categories will be loaded here -->
+            </select>
+            <button class="btn btn-primary" onclick="selectAllProducts()">✅ تحديد الكل</button>
+            <button class="btn btn-secondary" onclick="deselectAllProducts()">❌ إلغاء الكل</button>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">المنتجات المحددة:</label>
+            <div id="selectedProducts" style="max-height: 200px; overflow-y: auto; padding: 10px; background: white; border-radius: 6px; border: 1px solid #ddd;">
+              <!-- Selected products will appear here -->
+            </div>
+          </div>
+          
+          <div class="price-update-form">
+            <input type="number" id="bulkPrice" class="price-update-input" placeholder="السعر الجديد">
+            <button class="btn btn-primary" onclick="updateBulkPrices()">💲 تحديث الأسعار</button>
+            <button class="btn btn-warning" onclick="increaseBulkPrices(100)">➕ زيادة 100 ريال</button>
+            <button class="btn btn-danger" onclick="decreaseBulkPrices(100)">➖ خصم 100 ريال</button>
+          </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+          <h4 style="color: #38C172; margin-bottom: 15px;">تحديث كافة المنتجات</h4>
+          <div style="display: flex; gap: 10px;">
+            <input type="number" id="globalPriceUpdate" class="form-input" placeholder="تحديث جميع الأسعار بنسبة %">
+            <button class="btn btn-warning" onclick="updateAllPrices()">تحديد نسبة</button>
           </div>
         </div>
       </div>
-
-      <!-- سندوتشات -->
-      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="5">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="ساندويتش برجر لحم مع خضار"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/03/05/19/37/appetite-1238459_640.jpg'"
-          >
-          <span class="product-badge">👍 مفضل</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">برجر لحم مشوي</h3>
-          <p class="product-desc">برجر لحم مع خضار طازجة وصوص خاص</p>
-          <div class="product-meta">
-            <span class="product-price">3500 ريال</span>
-            <button class="btn-add-to-cart" data-id="5" aria-label="إضافة برجر لحم مشوي إلى السلة">
-              <span>+</span> إضافة
-            </button>
+      
+      <!-- Add Product Tab -->
+      <div id="add-tab" class="tab-content">
+        <h3 style="margin-bottom: 20px; color: #333;">إضافة منتج جديد</h3>
+        <form id="addProductForm">
+          <div class="form-group">
+            <label class="form-label">اسم المنتج *</label>
+            <input type="text" class="form-input" id="productName" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">وصف المنتج *</label>
+            <textarea class="form-textarea" id="productDescription" required></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">السعر (ريال) *</label>
+            <input type="number" class="form-input" id="productPrice" required min="1">
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">التصنيف *</label>
+            <select class="form-select" id="productCategory" required>
+              <option value="">اختر تصنيف</option>
+              <!-- Categories will be loaded here -->
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">صورة المنتج *</label>
+            <div class="image-upload-container" id="imageUploadArea">
+              <div class="image-preview-container" id="imagePreviewContainer">
+                <img id="imagePreview" class="image-preview" alt="معاينة الصورة">
+                <button type="button" class="btn btn-danger" onclick="removeImage()" style="margin-top: 10px; padding: 8px 15px;">
+                  🗑️ إزالة الصورة
+                </button>
+              </div>
+              <div id="uploadPlaceholder">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text">انقر لرفع صورة مناسبة للمنتج</div>
+                <div class="upload-button">اختر صورة</div>
+                <input type="file" id="imageFile" accept="image/*" style="display: none;">
+              </div>
+            </div>
+            <small style="color: #666; margin-top: 5px; display: block;">اختر صورة مناسبة للمنتج (مثال: عصير برتقال → صورة عصير برتقال)</small>
+          </div>
+          
+          <div style="display: flex; gap: 10px; margin-top: 30px;">
+            <button type="submit" class="btn btn-primary" style="flex: 2;">➕ إضافة المنتج</button>
+            <button type="button" class="btn btn-secondary" onclick="clearAddForm()" style="flex: 1;">🗑️ مسح النموذج</button>
+          </div>
+        </form>
+      </div>
+      
+      <!-- Categories Management Tab -->
+      <div id="categories-tab" class="tab-content">
+        <h3 style="margin-bottom: 20px; color: #333;">إدارة التصنيفات</h3>
+        
+        <div class="form-group">
+          <label class="form-label">إضافة تصنيف جديد</label>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" class="form-input" id="newCategory" placeholder="اسم التصنيف الجديد">
+            <button class="btn btn-primary" id="addCategoryBtn">➕ إضافة</button>
           </div>
         </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="6">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1550317138-10000687a72b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="ساندويتش دجاج مشوي"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2018/04/13/17/14/vegetable-skewer-3317060_640.jpg'"
-          >
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">ساندويتش دجاج مشوي</h3>
-          <p class="product-desc">دجاج مشوي مع الخضار والمايونيز</p>
-          <div class="product-meta">
-            <span class="product-price">2800 ريال</span>
-            <button class="btn-add-to-cart" data-id="6" aria-label="إضافة ساندويتش دجاج مشوي إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="7">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="بيتزا مع جبن وصلصة"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2017/12/10/14/47/pizza-3010062_640.jpg'"
-          >
-          <span class="product-badge">🍕 خاص</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">بيتزا جبن</h3>
-          <p class="product-desc">بيتزا مع جبن موزاريلا وصلصة الطماطم</p>
-          <div class="product-meta">
-            <span class="product-price">4000 ريال</span>
-            <button class="btn-add-to-cart" data-id="7" aria-label="إضافة بيتزا جبن إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="سندوتشات" data-id="8">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="ساندويتش شاورما لحم"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/18/15/46/food-1835473_640.jpg'"
-          >
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">شاورما لحم</h3>
-          <p class="product-desc">شاورما لحم مع خضار وصوص الثوم</p>
-          <div class="product-meta">
-            <span class="product-price">2500 ريال</span>
-            <button class="btn-add-to-cart" data-id="8" aria-label="إضافة شاورما لحم إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- الحلويات -->
-      <div class="product-card" role="listitem" data-category="حلويات" data-id="9">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="كيك شوكولاتة"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/22/18/52/cake-1850011_640.jpg'"
-          >
-          <span class="product-badge">🍰 شهي</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">كيك شوكولاتة</h3>
-          <p class="product-desc">كيك شوكولاتة رطب مع طبقة كريمية</p>
-          <div class="product-meta">
-            <span class="product-price">1800 ريال</span>
-            <button class="btn-add-to-cart" data-id="9" aria-label="إضافة كيك شوكولاتة إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="حلويات" data-id="10">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="آيس كريم فانيليا"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2018/08/16/22/59/ice-cream-3611698_640.jpg'"
-          >
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">آيس كريم فانيليا</h3>
-          <p class="product-desc">آيس كريم فانيليا مع توبينج شوكولاتة</p>
-          <div class="product-meta">
-            <span class="product-price">1200 ريال</span>
-            <button class="btn-add-to-cart" data-id="10" aria-label="إضافة آيس كريم فانيليا إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- المشروبات الساخنة -->
-      <div class="product-card" role="listitem" data-category="ساخنة" data-id="11">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="قهوة إسبريسو"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2015/10/12/14/54/coffee-983955_640.jpg'"
-          >
-          <span class="product-badge">☕ متميز</span>
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">قهوة إسبريسو</h3>
-          <p class="product-desc">قهوة إسبريسو إيطالية مركزة</p>
-          <div class="product-meta">
-            <span class="product-price">1000 ريال</span>
-            <button class="btn-add-to-cart" data-id="11" aria-label="إضافة قهوة إسبريسو إلى السلة">
-              <span>+</span> إضافة
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div class="product-card" role="listitem" data-category="ساخنة" data-id="12">
-        <div class="product-image">
-          <img 
-            src="https://images.unsplash.com/photo-1577968897966-3d4325b36b61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
-            alt="شاي أخضر"
-            loading="lazy"
-            onerror="this.src='https://cdn.pixabay.com/photo/2016/11/29/13/04/beverage-1869716_640.jpg'"
-          >
-        </div>
-        <div class="product-info">
-          <h3 class="product-title">شاي أخضر</h3>
-          <p class="product-desc">شاي أخضر طبيعي مع نعناع</p>
-          <div class="product-meta">
-            <span class="product-price">800 ريال</span>
-            <button class="btn-add-to-cart" data-id="12" aria-label="إضافة شاي أخضر إلى السلة">
-              <span>+</span> إضافة
-            </button>
+        
+        <div class="form-group">
+          <label class="form-label">التصنيفات الحالية</label>
+          <div id="categoriesList" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+            <!-- Categories will be loaded here -->
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Edit Product Modal -->
+  <div id="editModal" class="admin-panel">
+    <div class="admin-content" style="max-width: 600px;">
+      <div class="admin-header">
+        <h2 class="admin-title">✏️ تعديل المنتج</h2>
+        <button class="close-admin" onclick="closeEditModal()">✕</button>
+      </div>
+      
+      <form id="editProductForm">
+        <input type="hidden" id="editProductId">
+        
+        <div class="form-group">
+          <label class="form-label">اسم المنتج</label>
+          <input type="text" class="form-input" id="editProductName" required>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">وصف المنتج</label>
+          <textarea class="form-textarea" id="editProductDescription" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">السعر (ريال)</label>
+          <input type="number" class="form-input" id="editProductPrice" required min="1">
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">التصنيف</label>
+          <select class="form-select" id="editProductCategory" required>
+            <!-- Categories will be loaded here -->
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label">صورة المنتج</label>
+          <div class="image-upload-container" id="editImageUploadArea">
+            <div class="image-preview-container" id="editImagePreviewContainer">
+              <img id="editImagePreview" class="image-preview" alt="معاينة الصورة">
+              <button type="button" class="btn btn-danger" onclick="removeEditImage()" style="margin-top: 10px; padding: 8px 15px;">
+                🗑️ إزالة الصورة
+              </button>
+            </div>
+            <div id="editUploadPlaceholder">
+              <div class="upload-icon">🔄</div>
+              <div class="upload-text">انقر لتغيير الصورة</div>
+              <div class="upload-button">اختر صورة جديدة</div>
+              <input type="file" id="editImageFile" accept="image/*" style="display: none;">
+            </div>
+          </div>
+        </div>
+        
+        <div style="display: flex; gap: 10px; margin-top: 30px;">
+          <button type="submit" class="btn btn-primary" style="flex: 2;">💾 حفظ التعديلات</button>
+          <button type="button" class="btn btn-danger" onclick="closeEditModal()" style="flex: 1;">إلغاء</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // كلمة المرور للوحة التحكم
+    const ADMIN_PASSWORD = "123456";
+
+    // بيانات التطبيق
+    let products = JSON.parse(localStorage.getItem('kafeteria_products')) || [];
+    let categories = JSON.parse(localStorage.getItem('kafeteria_categories')) || [
+      "عصائر", 
+      "سندوتشات", 
+      "بيتزا", 
+      "برجر", 
+      "حلويات", 
+      "مشروبات ساخنة",
+      "وجبات خفيفة",
+      "مقبلات"
+    ];
     
-    <div id="no-products" class="no-products" hidden>
-      <p>لا توجد منتجات في هذا التصنيف حالياً.</p>
-    </div>
-  </section>
+    // بيانات المقدمة
+    let heroData = JSON.parse(localStorage.getItem('kafeteria_hero')) || {
+      title: "استمتع بتجربة عصائر فاخرة لا تُنسى! 🍹",
+      text: "اكتشف عالمًا من النكهات الراقية مع عصائرنا الطازجة الفاخرة وسندوتشاتنا المميزة - جودة لا مثيل لها في كل قطرة وقضمة!",
+      button: "ابدأ تجربتك الفاخرة الآن",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      opacity: 60
+    };
+    
+    // بيانات الميزات الإضافية
+    let featuresData = JSON.parse(localStorage.getItem('kafeteria_features')) || [
+      {
+        icon: "🚚",
+        title: "توصيل سريع",
+        text: "توصيل إلى جميع أنحاء المدينة خلال 30-45 دقيقة"
+      },
+      {
+        icon: "✨",
+        title: "جودة عالية",
+        text: "مكونات طازجة وعالية الجودة في كل طلب"
+      },
+      {
+        icon: "💳",
+        title: "دفع آمن",
+        text: "خيارات دفع متعددة وآمنة"
+      }
+    ];
+    
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let currentCategory = 'الكل';
+    let selectedProductsForBulk = [];
 
-  <!-- باقي الصفحة كما هي ... -->
+    // تهيئة الصفحة
+    document.addEventListener('DOMContentLoaded', function() {
+      // تحميل بيانات تجريبية إذا لم تكن هناك بيانات
+      if (products.length === 0) {
+        loadSampleData();
+      }
+      
+      saveData();
+      initCategories();
+      loadProducts();
+      updateCartCount();
+      updateStats();
+      updateHeroSection();
+      loadFeatures();
+      
+      // إخفاء مؤشر التحميل
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 1000);
+      
+      // تهيئة لوحة التحكم
+      initAdminPanel();
+      initImageUpload();
+      initHeroImageUpload();
+    });
+
+    // تحميل بيانات تجريبية مع صور مناسبة للمنتجات
+    function loadSampleData() {
+      products = [
+        // العصائر مع صور مناسبة
+        {
+          id: 1,
+          name: "عصير برتقال طازج",
+          description: "عصير برتقال طبيعي 100% بدون إضافات",
+          price: 500,
+          category: "عصائر",
+          image: "https://images.unsplash.com/photo-1623065687346-7e23c4c2b19b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 2,
+          name: "عصير فراولة",
+          description: "عصير فراولة طبيعي مع قطع الفاكهة",
+          price: 500,
+          category: "عصائر",
+          image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 3,
+          name: "عصير مانجو",
+          description: "عصير مانجو كامل النضج والطعم",
+          price: 700,
+          category: "عصائر",
+          image: "https://images.unsplash.com/photo-1603561596112-0a132a716fcf?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 4,
+          name: "عصير أفوكادو",
+          description: "عصير أفوكادو كريمي مع الحليب",
+          price: 1000,
+          category: "عصائر",
+          image: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 5,
+          name: "عصير أناناس",
+          description: "عصير أناناس طازج مع قطع الفاكهة",
+          price: 600,
+          category: "عصائر",
+          image: "https://images.unsplash.com/photo-1552863013-2f7d6e8b8a3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // سندوتشات مع صور مناسبة
+        {
+          id: 11,
+          name: "سندويتش جبنة",
+          description: "جبنة شيدر مع خضار طازجة",
+          price: 1500,
+          category: "سندوتشات",
+          image: "https://images.unsplash.com/photo-1567234669003-dce7a7a88821?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 12,
+          name: "سندويتش زعتر وزيت",
+          description: "زعتر وزيت زيتون مع زيتون",
+          price: 1200,
+          category: "سندوتشات",
+          image: "https://images.unsplash.com/photo-1550317138-10000687a72b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 13,
+          name: "سندويتش تونة",
+          description: "تونة مع مايونيز وخضار",
+          price: 1800,
+          category: "سندوتشات",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // برجر مع صور مناسبة
+        {
+          id: 16,
+          name: "برجر لحم مشوي",
+          description: "برجر لحم مع خضار طازجة وصوص خاص",
+          price: 3500,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 17,
+          name: "برجر دجاج",
+          description: "برجر دجاج مشوي مع خضار",
+          price: 3000,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // بيتزا مع صور مناسبة
+        {
+          id: 20,
+          name: "بيتزا جبنة",
+          description: "بيتزا مع جبن موزاريلا وصلصة الطماطم",
+          price: 4000,
+          category: "بيتزا",
+          image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 21,
+          name: "بيتزا خضار",
+          description: "بيتزا مع خضار طازجة متنوعة",
+          price: 4500,
+          category: "بيتزا",
+          image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // حلويات مع صور مناسبة
+        {
+          id: 24,
+          name: "كيك شوكولاتة",
+          description: "كيك شوكولاتة رطب مع طبقة كريمية",
+          price: 1800,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 25,
+          name: "آيس كريم فانيليا",
+          description: "آيس كريم فانيليا مع توبينج شوكولاتة",
+          price: 1200,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // مشروبات ساخنة مع صور مناسبة
+        {
+          id: 28,
+          name: "قهوة إسبريسو",
+          description: "قهوة إسبريسو إيطالية مركزة",
+          price: 1000,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 29,
+          name: "كابتشينو",
+          description: "كابتشينو إيطالي مع رغوة حليب",
+          price: 1200,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        }
+      ];
+    }
+
+    // حفظ البيانات
+    function saveData() {
+      localStorage.setItem('kafeteria_products', JSON.stringify(products));
+      localStorage.setItem('kafeteria_categories', JSON.stringify(categories));
+      localStorage.setItem('kafeteria_hero', JSON.stringify(heroData));
+      localStorage.setItem('kafeteria_features', JSON.stringify(featuresData));
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // تحديث قسم المقدمة
+    function updateHeroSection() {
+      document.getElementById('heroTitle').textContent = heroData.title;
+      document.getElementById('heroText').textContent = heroData.text;
+      document.getElementById('heroButton').textContent = heroData.button;
+      
+      // تحديث صورة الخلفية
+      const heroSection = document.getElementById('heroSection');
+      heroSection.style.background = `linear-gradient(rgba(0,0,0,${heroData.opacity/100}), rgba(0,0,0,${heroData.opacity/100})), url('${heroData.image}')`;
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+      
+      // تحديث المعاينة في لوحة التحكم
+      document.getElementById('heroPreviewTitle').textContent = heroData.title;
+      document.getElementById('heroPreviewText').textContent = heroData.text;
+      document.getElementById('heroPreviewButton').textContent = heroData.button;
+      document.getElementById('heroPreviewImage').src = heroData.image;
+      
+      // تحديث حقول التعديل
+      document.getElementById('heroTitleInput').value = heroData.title;
+      document.getElementById('heroTextInput').value = heroData.text;
+      document.getElementById('heroButtonInput').value = heroData.button;
+      document.getElementById('heroImagePreview').src = heroData.image;
+      document.getElementById('heroOpacity').value = heroData.opacity;
+      document.getElementById('opacityValue').textContent = heroData.opacity + '%';
+      
+      if (heroData.image) {
+        document.getElementById('heroImagePreviewContainer').classList.add('active');
+        document.getElementById('heroUploadPlaceholder').style.display = 'none';
+      }
+    }
+
+    // تحميل الميزات الإضافية
+    function loadFeatures() {
+      const featuresContainer = document.getElementById('featuresSection');
+      const featuresManagement = document.getElementById('featuresManagement');
+      
+      featuresContainer.innerHTML = '';
+      featuresManagement.innerHTML = '';
+      
+      featuresData.forEach((feature, index) => {
+        // عرض الميزات في الصفحة
+        const featureElement = document.createElement('div');
+        featureElement.style.cssText = 'background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);';
+        featureElement.innerHTML = `
+          <div style="font-size: 3rem; margin-bottom: 15px;">${feature.icon}</div>
+          <h3 style="color: #38C172; margin-bottom: 10px;">${feature.title}</h3>
+          <p>${feature.text}</p>
+        `;
+        featuresContainer.appendChild(featureElement);
+        
+        // عرض الميزات في لوحة التحكم
+        const managementElement = document.createElement('div');
+        managementElement.className = 'form-group';
+        managementElement.innerHTML = `
+          <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+            <input type="text" class="form-input" value="${feature.icon}" placeholder="رمز" style="width: 80px;" onchange="updateFeature(${index}, 'icon', this.value)">
+            <input type="text" class="form-input" value="${feature.title}" placeholder="العنوان" style="flex: 2;" onchange="updateFeature(${index}, 'title', this.value)">
+            <button class="btn btn-danger" onclick="deleteFeature(${index})" style="padding: 8px 15px;">🗑️</button>
+          </div>
+          <input type="text" class="form-input" value="${feature.text}" placeholder="النص" onchange="updateFeature(${index}, 'text', this.value)">
+        `;
+        featuresManagement.appendChild(managementElement);
+      });
+      
+      // زر إضافة ميزة جديدة
+      const addFeatureBtn = document.createElement('button');
+      addFeatureBtn.className = 'btn btn-primary';
+      addFeatureBtn.textContent = '➕ إضافة ميزة جديدة';
+      addFeatureBtn.onclick = addNewFeature;
+      featuresManagement.appendChild(addFeatureBtn);
+    }
+
+    // تحديث الميزة
+    function updateFeature(index, field, value) {
+      featuresData[index][field] = value;
+      saveData();
+      loadFeatures();
+    }
+
+    // حذف الميزة
+    function deleteFeature(index) {
+      if (confirm('هل تريد حذف هذه الميزة؟')) {
+        featuresData.splice(index, 1);
+        saveData();
+        loadFeatures();
+      }
+    }
+
+    // إضافة ميزة جديدة
+    function addNewFeature() {
+      featuresData.push({
+        icon: "✨",
+        title: "ميزة جديدة",
+        text: "وصف الميزة الجديدة"
+      });
+      saveData();
+      loadFeatures();
+    }
+
+    // تحديث الإحصائيات
+    function updateStats() {
+      document.getElementById('totalProducts').textContent = products.length;
+      document.getElementById('totalCategories').textContent = categories.length;
+      document.getElementById('totalOrders').textContent = localStorage.getItem('totalOrders') || '0';
+    }
+
+    // تهيئة التصنيفات
+    function initCategories() {
+      const categoriesContainer = document.getElementById('categories');
+      categoriesContainer.innerHTML = '';
+      
+      const allCategories = ['الكل', ...categories];
+      
+      allCategories.forEach(category => {
+        const button = document.createElement('button');
+        button.className = 'category-btn';
+        button.textContent = category;
+        if (category === 'الكل') button.classList.add('active');
+        
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+          currentCategory = category;
+          loadProducts();
+        });
+        
+        categoriesContainer.appendChild(button);
+      });
+    }
+
+    // تحميل المنتجات
+    function loadProducts() {
+      const container = document.getElementById('product-container');
+      container.innerHTML = '';
+      
+      const filteredProducts = currentCategory === 'الكل' 
+        ? products 
+        : products.filter(product => product.category === currentCategory);
+      
+      if (filteredProducts.length === 0) {
+        container.innerHTML = '<div class="text-center" style="grid-column: 1/-1; padding: 40px; color: #666;">لا توجد منتجات في هذا التصنيف</div>';
+        return;
+      }
+      
+      filteredProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product-card';
+        productElement.innerHTML = `
+          <div class="admin-controls">
+            <button class="admin-btn edit-btn" onclick="openEditModal(${product.id})">✏️</button>
+            <button class="admin-btn delete-btn" onclick="deleteProduct(${product.id})">🗑️</button>
+          </div>
+          <div class="product-image">
+            <img src="${product.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'}" alt="${product.name}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-desc">${product.description}</p>
+            <div class="product-meta">
+              <span class="product-price">${product.price} ريال</span>
+              <button class="btn-add-to-cart" data-id="${product.id}">
+                + إضافة
+              </button>
+            </div>
+          </div>
+        `;
+        
+        container.appendChild(productElement);
+      });
+      
+      document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const productId = parseInt(this.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+
+    // إضافة إلى السلة
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      const existingItem = cart.find(item => item.id === productId);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          ...product,
+          quantity: 1
+        });
+      }
+      
+      saveData();
+      updateCartCount();
+      showNotification('تمت إضافة المنتج إلى السلة ✓');
+    }
+
+    // تحديث عداد السلة
+    function updateCartCount() {
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      document.getElementById('cartCount').textContent = count;
+    }
+
+    // عرض الإشعار
+    function showNotification(message, type = 'success') {
+      const notification = document.createElement('div');
+      notification.className = 'notification' + (type === 'error' ? ' error' : '');
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // تهيئة لوحة التحكم
+    function initAdminPanel() {
+      const adminLoginBtn = document.getElementById('adminLoginBtn');
+      const adminPanel = document.getElementById('adminPanel');
+      const closeAdminBtn = document.getElementById('closeAdminBtn');
+      
+      adminLoginBtn.addEventListener('click', function() {
+        const password = prompt('🔐 الرجاء إدخال كلمة المرور للوصول إلى لوحة التحكم:');
+        if (password === ADMIN_PASSWORD) {
+          adminPanel.classList.add('active');
+          updateAdminProductsList();
+          updateAdminCategories();
+          updateStats();
+          updateHeroSection();
+        } else if (password !== null) {
+          alert('❌ كلمة المرور غير صحيحة!');
+        }
+      });
+      
+      closeAdminBtn.addEventListener('click', function() {
+        adminPanel.classList.remove('active');
+      });
+      
+      // التبويبات
+      document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          
+          document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      // إدارة المقدمة
+      document.getElementById('heroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        heroData.title = document.getElementById('heroTitleInput').value;
+        heroData.text = document.getElementById('heroTextInput').value;
+        heroData.button = document.getElementById('heroButtonInput').value;
+        heroData.opacity = document.getElementById('heroOpacity').value;
+        
+        saveData();
+        updateHeroSection();
+        showNotification('تم حفظ تعديلات المقدمة بنجاح! ✓');
+      });
+      
+      // تغيير شريط التعتيم
+      document.getElementById('heroOpacity').addEventListener('input', function() {
+        document.getElementById('opacityValue').textContent = this.value + '%';
+      });
+      
+      // إضافة منتج جديد
+      document.getElementById('addProductForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('productName').value;
+        const description = document.getElementById('productDescription').value;
+        const price = parseInt(document.getElementById('productPrice').value);
+        const category = document.getElementById('productCategory').value;
+        const image = document.getElementById('imagePreview').src;
+        
+        if (!name || !description || !price || !category || !image) {
+          alert('الرجاء ملء جميع الحقول المطلوبة!');
+          return;
+        }
+        
+        const newProduct = {
+          id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+          name,
+          description,
+          price,
+          category,
+          image
+        };
+        
+        products.push(newProduct);
+        saveData();
+        loadProducts();
+        updateStats();
+        
+        showNotification('تمت إضافة المنتج بنجاح! ✓');
+        clearAddForm();
+        document.querySelector('[data-tab="products-tab"]').click();
+      });
+      
+      // إضافة تصنيف جديد
+      document.getElementById('addCategoryBtn').addEventListener('click', function() {
+        const newCategory = document.getElementById('newCategory').value.trim();
+        
+        if (!newCategory) {
+          alert('الرجاء إدخال اسم التصنيف!');
+          return;
+        }
+        
+        if (categories.includes(newCategory)) {
+          alert('هذا التصنيف موجود بالفعل!');
+          return;
+        }
+        
+        categories.push(newCategory);
+        saveData();
+        updateAdminCategories();
+        initCategories();
+        document.getElementById('newCategory').value = '';
+        showNotification('تمت إضافة التصنيف بنجاح! ✓');
+      });
+    }
+
+    // تهيئة رفع الصور للمنتجات
+    function initImageUpload() {
+      const imageUploadArea = document.getElementById('imageUploadArea');
+      const imageFile = document.getElementById('imageFile');
+      const imagePreview = document.getElementById('imagePreview');
+      const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+      const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+      
+      imageUploadArea.addEventListener('click', function() {
+        imageFile.click();
+      });
+      
+      imageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreviewContainer.classList.add('active');
+            uploadPlaceholder.style.display = 'none';
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+    }
+
+    // تهيئة رفع صورة المقدمة
+    function initHeroImageUpload() {
+      const heroImageUpload = document.getElementById('heroImageUpload');
+      const heroImageFile = document.getElementById('heroImageFile');
+      const heroImagePreview = document.getElementById('heroImagePreview');
+      const heroImagePreviewContainer = document.getElementById('heroImagePreviewContainer');
+      const heroUploadPlaceholder = document.getElementById('heroUploadPlaceholder');
+      
+      heroImageUpload.addEventListener('click', function() {
+        heroImageFile.click();
+      });
+      
+      heroImageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            heroData.image = e.target.result;
+            heroImagePreview.src = e.target.result;
+            heroImagePreviewContainer.classList.add('active');
+            heroUploadPlaceholder.style.display = 'none';
+            
+            // حفظ مباشرة
+            saveData();
+            updateHeroSection();
+            showNotification('تم تغيير صورة المقدمة بنجاح! ✓');
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+    }
+
+    // تحديث قائمة المنتجات في لوحة التحكم
+    function updateAdminProductsList() {
+      const container = document.getElementById('adminProductsList');
+      container.innerHTML = '';
+      
+      if (products.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">لا توجد منتجات حتى الآن</div>';
+        return;
+      }
+      
+      products.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <div class="product-item-info">
+            <h4>${product.name}</h4>
+            <p>${product.category} | ${product.price} ريال</p>
+          </div>
+          <div class="product-item-actions">
+            <button class="btn btn-primary" onclick="openEditModal(${product.id})">✏️ تعديل</button>
+            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">🗑️ حذف</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // تحديث التصنيفات في لوحة التحكم
+    function updateAdminCategories() {
+      const categoriesSelects = [
+        document.getElementById('productCategory'),
+        document.getElementById('editProductCategory'),
+        document.getElementById('bulkCategory')
+      ];
+      
+      categoriesSelects.forEach(select => {
+        if (select) {
+          select.innerHTML = '<option value="">اختر تصنيف</option>' +
+            categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+        }
+      });
+      
+      const categoriesList = document.getElementById('categoriesList');
+      if (categoriesList) {
+        categoriesList.innerHTML = '';
+        
+        categories.forEach((category, index) => {
+          const categoryElement = document.createElement('div');
+          categoryElement.className = 'category-item';
+          categoryElement.style.cssText = `
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #38C172;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          `;
+          
+          categoryElement.innerHTML = `
+            <span>${category}</span>
+            <button onclick="deleteCategory(${index})" style="background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 1.2rem;">×</button>
+          `;
+          
+          categoriesList.appendChild(categoryElement);
+        });
+      }
+    }
+
+    // فتح نافذة تعديل المنتج
+    function openEditModal(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      document.getElementById('editProductId').value = product.id;
+      document.getElementById('editProductName').value = product.name;
+      document.getElementById('editProductDescription').value = product.description;
+      document.getElementById('editProductPrice').value = product.price;
+      document.getElementById('editProductCategory').value = product.category;
+      
+      const editImagePreview = document.getElementById('editImagePreview');
+      const editImagePreviewContainer = document.getElementById('editImagePreviewContainer');
+      const editUploadPlaceholder = document.getElementById('editUploadPlaceholder');
+      
+      editImagePreview.src = product.image;
+      editImagePreviewContainer.classList.add('active');
+      editUploadPlaceholder.style.display = 'none';
+      
+      // تهيئة رفع الصور للتعديل
+      const editImageUploadArea = document.getElementById('editImageUploadArea');
+      const editImageFile = document.getElementById('editImageFile');
+      
+      editImageUploadArea.addEventListener('click', function() {
+        editImageFile.click();
+      });
+      
+      editImageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            editImagePreview.src = e.target.result;
+            editImagePreviewContainer.classList.add('active');
+            editUploadPlaceholder.style.display = 'none';
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+      
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    // إغلاق نافذة تعديل المنتج
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('active');
+    }
+
+    // حفظ تعديلات المنتج
+    document.getElementById('editProductForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const productId = parseInt(document.getElementById('editProductId').value);
+      const productIndex = products.findIndex(p => p.id === productId);
+      
+      if (productIndex === -1) return;
+      
+      products[productIndex] = {
+        id: productId,
+        name: document.getElementById('editProductName').value,
+        description: document.getElementById('editProductDescription').value,
+        price: parseInt(document.getElementById('editProductPrice').value),
+        category: document.getElementById('editProductCategory').value,
+        image: document.getElementById('editImagePreview').src
+      };
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      closeEditModal();
+      showNotification('تم تحديث المنتج بنجاح! ✓');
+    });
+
+    // حذف المنتج
+    function deleteProduct(productId) {
+      if (!confirm('هل أنت متأكد من حذف هذا المنتج؟')) return;
+      
+      products = products.filter(p => p.id !== productId);
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification('تم حذف المنتج بنجاح! ✓');
+    }
+
+    // حذف التصنيف
+    function deleteCategory(index) {
+      if (!confirm('هل أنت متأكد من حذف هذا التصنيف؟ سيتم حذف جميع المنتجات المرتبطة به.')) return;
+      
+      const category = categories[index];
+      
+      // حذف المنتجات المرتبطة بالتصنيف
+      products = products.filter(p => p.category !== category);
+      
+      // حذف التصنيف
+      categories.splice(index, 1);
+      
+      saveData();
+      updateAdminCategories();
+      updateAdminProductsList();
+      loadProducts();
+      initCategories();
+      updateStats();
+      showNotification('تم حذف التصنيف وجميع منتجاته بنجاح! ✓');
+    }
+
+    // مسح نموذج الإضافة
+    function clearAddForm() {
+      document.getElementById('addProductForm').reset();
+      document.getElementById('imagePreview').src = '';
+      document.getElementById('imagePreviewContainer').classList.remove('active');
+      document.getElementById('uploadPlaceholder').style.display = 'block';
+    }
+
+    // إزالة الصورة
+    function removeImage() {
+      document.getElementById('imagePreview').src = '';
+      document.getElementById('imagePreviewContainer').classList.remove('active');
+      document.getElementById('uploadPlaceholder').style.display = 'block';
+      document.getElementById('imageFile').value = '';
+    }
+
+    // إزالة صورة المقدمة
+    function removeHeroImage() {
+      heroData.image = 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
+      saveData();
+      updateHeroSection();
+      showNotification('تم إعادة تعيين صورة المقدمة! ✓');
+    }
+
+    // إزالة الصورة في التعديل
+    function removeEditImage() {
+      const editImagePreview = document.getElementById('editImagePreview');
+      const editImagePreviewContainer = document.getElementById('editImagePreviewContainer');
+      const editUploadPlaceholder = document.getElementById('editUploadPlaceholder');
+      
+      editImagePreview.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+      editImagePreviewContainer.classList.remove('active');
+      editUploadPlaceholder.style.display = 'block';
+    }
+
+    // تحديد جميع المنتجات للتعديل الشامل
+    function selectAllProducts() {
+      const category = document.getElementById('bulkCategory').value;
+      
+      selectedProductsForBulk = category 
+        ? products.filter(p => p.category === category).map(p => p.id)
+        : products.map(p => p.id);
+      
+      updateSelectedProductsDisplay();
+    }
+
+    // إلغاء تحديد جميع المنتجات
+    function deselectAllProducts() {
+      selectedProductsForBulk = [];
+      updateSelectedProductsDisplay();
+    }
+
+    // تحديث عرض المنتجات المحددة
+    function updateSelectedProductsDisplay() {
+      const container = document.getElementById('selectedProducts');
+      container.innerHTML = '';
+      
+      if (selectedProductsForBulk.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">لم يتم تحديد أي منتجات</div>';
+        return;
+      }
+      
+      selectedProductsForBulk.forEach(productId => {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        
+        const productElement = document.createElement('div');
+        productElement.style.cssText = `
+          padding: 8px 12px;
+          background: white;
+          border-radius: 6px;
+          margin-bottom: 5px;
+          border-left: 3px solid #38C172;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        `;
+        
+        productElement.innerHTML = `
+          <span>${product.name}</span>
+          <span style="color: #38C172; font-weight: 700;">${product.price} ريال</span>
+        `;
+        
+        container.appendChild(productElement);
+      });
+    }
+
+    // تحديث الأسعار بالجملة
+    function updateBulkPrices() {
+      const newPrice = parseInt(document.getElementById('bulkPrice').value);
+      
+      if (!newPrice || newPrice < 1) {
+        alert('الرجاء إدخال سعر صحيح!');
+        return;
+      }
+      
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      if (!confirm(`هل تريد تحديث ${selectedProductsForBulk.length} منتج بسعر ${newPrice} ريال؟`)) return;
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id)) {
+          product.price = newPrice;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم تحديث ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      
+      selectedProductsForBulk = [];
+      document.getElementById('bulkPrice').value = '';
+      updateSelectedProductsDisplay();
+    }
+
+    // زيادة الأسعار
+    function increaseBulkPrices(amount) {
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id)) {
+          product.price += amount;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم زيادة أسعار ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      updateSelectedProductsDisplay();
+    }
+
+    // خصم الأسعار
+    function decreaseBulkPrices(amount) {
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id) && product.price > amount) {
+          product.price -= amount;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم خصم أسعار ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      updateSelectedProductsDisplay();
+    }
+
+    // تحديث جميع الأسعار بنسبة مئوية
+    function updateAllPrices() {
+      const percentage = parseInt(document.getElementById('globalPriceUpdate').value);
+      
+      if (!percentage) {
+        alert('الرجاء إدخال نسبة مئوية!');
+        return;
+      }
+      
+      if (!confirm(`هل تريد تحديث جميع الأسعار بنسبة ${percentage}%؟`)) return;
+      
+      products.forEach(product => {
+        const newPrice = Math.round(product.price * (1 + percentage / 100));
+        product.price = newPrice > 0 ? newPrice : 1;
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم تحديث جميع الأسعار بنسبة ${percentage}% بنجاح! ✓`);
+      document.getElementById('globalPriceUpdate').value = '';
+    }
+
+    // تصدير البيانات
+    function exportData() {
+      const data = {
+        products,
+        categories,
+        heroData,
+        featuresData,
+        exportedAt: new Date().toISOString()
+      };
+      
+      const dataStr = JSON.stringify(data, null, 2);
+      const dataBlob = new Blob([dataStr], { type: 'application/json' });
+      
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(dataBlob);
+      link.download = `kafeteria-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      link.click();
+      
+      showNotification('تم تصدير البيانات بنجاح! ✓');
+    }
+
+    // استيراد البيانات
+    function importData() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      
+      input.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            try {
+              const data = JSON.parse(e.target.result);
+              
+              if (!confirm('هل تريد استبدال جميع البيانات الحالية؟ سيتم حذف جميع المنتجات الحالية.')) return;
+              
+              if (data.products) products = data.products;
+              if (data.categories) categories = data.categories;
+              if (data.heroData) heroData = data.heroData;
+              if (data.featuresData) featuresData = data.featuresData;
+              
+              saveData();
+              loadProducts();
+              initCategories();
+              updateAdminProductsList();
+              updateAdminCategories();
+              updateHeroSection();
+              loadFeatures();
+              updateStats();
+              
+              showNotification('تم استيراد البيانات بنجاح! ✓');
+            } catch (error) {
+              alert('ملف غير صالح! الرجاء اختيار ملف نسخ احتياطي صحيح.');
+            }
+          };
+          
+          reader.readAsText(e.target.files[0]);
+        }
+      });
+      
+      input.click();
+    }
+
+    // فلترة المنتجات
+    function filterProducts() {
+      const searchTerm = document.getElementById('searchProducts').value.toLowerCase();
+      const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(searchTerm) ||
+        product.description.toLowerCase().includes(searchTerm) ||
+        product.category.toLowerCase().includes(searchTerm)
+      );
+      
+      const container = document.getElementById('adminProductsList');
+      container.innerHTML = '';
+      
+      if (filteredProducts.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">لا توجد نتائج للبحث</div>';
+        return;
+      }
+      
+      filteredProducts.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <div class="product-item-info">
+            <h4>${product.name}</h4>
+            <p>${product.category} | ${product.price} ريال</p>
+          </div>
+          <div class="product-item-actions">
+            <button class="btn btn-primary" onclick="openEditModal(${product.id})">✏️ تعديل</button>
+            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">🗑️ حذف</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // وظائف السلة والطلبات (نفس السابق)...
+    document.getElementById('openCartBtn').addEventListener('click', function() {
+      if (cart.length === 0) {
+        alert('السلة فارغة، أضف بعض المنتجات أولاً!');
+        return;
+      }
+      
+      let cartContent = `
+        <div style="background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="color: #38C172;">🛒 سلة الطلب</h2>
+            <button onclick="closeCart()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">✕</button>
+          </div>
+      `;
+      
+      let subtotal = 0;
+      
+      cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        cartContent += `
+          <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+            <div style="flex: 1;">
+              <h4 style="margin: 0 0 5px 0; color: #333;">${item.name}</h4>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #38C172; font-weight: 700;">${item.price} ريال × ${item.quantity}</span>
+                <button onclick="removeFromCart(${item.id})" style="background: #fee; color: #e74c3c; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">إزالة</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      
+      const delivery = 500;
+      const total = subtotal + delivery;
+      
+      cartContent += `
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #eee;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span>المجموع:</span>
+            <span style="font-weight: 700;">${subtotal} ريال</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <span>رسوم التوصيل:</span>
+            <span style="font-weight: 700;">${delivery} ريال</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 15px; border-top: 2px solid #38C172; font-size: 1.2rem; font-weight: 700;">
+            <span>الإجمالي النهائي:</span>
+            <span style="color: #38C172;">${total} ريال</span>
+          </div>
+          <div style="margin-top: 25px;">
+            <button onclick="confirmOrder()" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+              📞 تأكيد الطلب
+            </button>
+          </div>
+          <p style="text-align: center; margin-top: 15px; color: #666; font-size: 0.9rem;">
+            سيتصل بك فريقنا خلال دقائق لتأكيد طلبك
+          </p>
+        </div>
+      </div>
+      `;
+      
+      const modal = document.createElement('div');
+      modal.className = 'admin-panel active';
+      modal.innerHTML = cartContent;
+      document.body.appendChild(modal);
+    });
+
+    function removeFromCart(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      saveData();
+      updateCartCount();
+      
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+      
+      if (cart.length === 0) {
+        showNotification('تم إفراغ السلة');
+      } else {
+        document.getElementById('openCartBtn').click();
+      }
+    }
+
+    function confirmOrder() {
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 500;
+      
+      const phone = '+967730528609';
+      const orderDetails = cart.map(item => 
+        `${item.name} × ${item.quantity} - ${item.price * item.quantity} ريال`
+      ).join('\n');
+      
+      const whatsappMessage = `مرحبًا، أرغب في طلب:\n\n${orderDetails}\n\nالمجموع: ${total} ريال`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      const totalOrders = parseInt(localStorage.getItem('totalOrders') || '0') + 1;
+      localStorage.setItem('totalOrders', totalOrders);
+      updateStats();
+      
+      window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+      
+      cart = [];
+      saveData();
+      updateCartCount();
+      
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+      
+      showNotification('تم تأكيد الطلب! سيتصل بك فريقنا قريبًا ✓');
+    }
+
+    function closeCart() {
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+    }
+  </script>
 </body>
-            </html>
+              </html>
