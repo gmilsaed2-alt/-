@@ -1331,7 +1331,7 @@
 
   <!-- JavaScript -->
   <script>
-    // كلمة المرور للمالك
+        // كلمة المرور للمالك
     const ADMIN_PASSWORD = "123456";
     const ADMIN_TOKEN_KEY = "kafeteria_admin_token";
     const CLOUD_STORAGE_KEY = "kafeteria_cloud_data";
@@ -1715,4 +1715,1502 @@
           id: 23,
           name: "بيتزا مارجريتا",
           description: "بيتزا كلاسيكية مع جبنة وريحان",
-         
+          price: 4200,
+          category: "بيتزا",
+          image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 24,
+          name: "بيتزا بيتي فور",
+          description: "بيتزا مع جميع الطبقات",
+          price: 5500,
+          category: "بيتزا",
+          image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // برجر (6 منتجات)
+        {
+          id: 25,
+          name: "برجر لحم مشوي",
+          description: "برجر لحم مع خضار طازجة وصوص خاص",
+          price: 3500,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 26,
+          name: "برجر دجاج",
+          description: "برجر دجاج مشوي مع خضار",
+          price: 3000,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 27,
+          name: "برجر مزدوج",
+          description: "برجر مزدوج مع جبنة وخضار",
+          price: 4500,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1553979459-d2229ba7433c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 28,
+          name: "برجر جبنة",
+          description: "برجر مع طبقات جبنة إضافية",
+          price: 3800,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 29,
+          name: "برجر نباتي",
+          description: "برجر نباتي مع خضار طازجة",
+          price: 3200,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 30,
+          name: "برجر خاص",
+          description: "برجر مع جميع الإضافات والصوص الخاص",
+          price: 4000,
+          category: "برجر",
+          image: "https://images.unsplash.com/photo-1553979459-d2229ba7433c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // حلويات (8 منتجات)
+        {
+          id: 31,
+          name: "كيك شوكولاتة",
+          description: "كيك شوكولاتة رطب مع طبقة كريمية",
+          price: 1800,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 32,
+          name: "آيس كريم فانيليا",
+          description: "آيس كريم فانيليا مع توبينج شوكولاتة",
+          price: 1200,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 33,
+          name: "كنافة",
+          description: "كنافة نابلسية مع جبنة",
+          price: 2200,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 34,
+          name: "بقلاوة",
+          description: "بقلاوة بالفستق الحلبي",
+          price: 2000,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 35,
+          name: "معمول",
+          description: "معمول بالتمر والفستق",
+          price: 1500,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 36,
+          name: "تشيز كيك",
+          description: "تشيز كيك بالتوت والكريمة",
+          price: 2000,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 37,
+          name: "دونات",
+          description: "دونات محلى مع صوص الشوكولاتة",
+          price: 800,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 38,
+          name: "وافل",
+          description: "وافل مقرمش مع عسل ومكسرات",
+          price: 1600,
+          category: "حلويات",
+          image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // مشروبات ساخنة (6 منتجات)
+        {
+          id: 39,
+          name: "قهوة إسبريسو",
+          description: "قهوة إسبريسو إيطالية مركزة",
+          price: 1000,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 40,
+          name: "شاي أخضر",
+          description: "شاي أخضر طبيعي مع نعناع",
+          price: 800,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 41,
+          name: "كابتشينو",
+          description: "كابتشينو إيطالي مع رغوة حليب",
+          price: 1200,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 42,
+          name: "لاتيه",
+          description: "قهوة لاتيه مع حليب مبخر",
+          price: 1300,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 43,
+          name: "شاي أحمر",
+          description: "شاي أحمر مع أعشاب طبيعية",
+          price: 700,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1577968897966-3d4325b36b61?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 44,
+          name: "موكا",
+          description: "قهوة موكا مع شوكولاتة",
+          price: 1400,
+          category: "مشروبات ساخنة",
+          image: "https://images.unsplash.com/photo-1570197788417-0e82375c9371?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // وجبات خفيفة (6 منتجات)
+        {
+          id: 45,
+          name: "بطاطس مقلية",
+          description: "بطاطس مقلية مقرمشة",
+          price: 1200,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 46,
+          name: "حلقات بصل",
+          description: "حلقات بصل مقلية",
+          price: 1400,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 47,
+          name: "تشيكن ناغتس",
+          description: "قطع دجاج مقرمشة",
+          price: 1800,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 48,
+          name: "سبرينغ رول",
+          description: "سبرينغ رول بالخضار",
+          price: 1600,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 49,
+          name: "تشيبس",
+          description: "تشيبس مقرمش بنكهات مختلفة",
+          price: 1000,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 50,
+          name: "مقرمشات جبن",
+          description: "مقرمشات بالجبنة",
+          price: 1500,
+          category: "وجبات خفيفة",
+          image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // مقبلات (6 منتجات)
+        {
+          id: 51,
+          name: "حمص بالطحينة",
+          description: "حمص طازج مع طحينة وزيت زيتون",
+          price: 1400,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 52,
+          name: "متبل باذنجان",
+          description: "متبل باذنجان مشوي",
+          price: 1200,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 53,
+          name: "فتوش",
+          description: "سلطة فتوش مع خبز مقلي",
+          price: 1500,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 54,
+          name: "تبولة",
+          description: "سلطة تبولة مع بقدونس وبرغل",
+          price: 1300,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 55,
+          name: "سلطة يونانية",
+          description: "سلطة يونانية مع جبنة فيتا",
+          price: 1600,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 56,
+          name: "لبنة وزيت زيتون",
+          description: "لبنة طازجة مع زيت زيتون",
+          price: 1100,
+          category: "مقبلات",
+          image: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // مشروبات غازية (6 منتجات)
+        {
+          id: 57,
+          name: "كولا",
+          description: "مشروب كولا غازي",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 58,
+          name: "فانتا",
+          description: "مشروب فانتا برتقال",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 59,
+          name: "سفن أب",
+          description: "مشروب سفن أب",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 60,
+          name: "ميرندا",
+          description: "مشروب ميرندا برتقال",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 61,
+          name: "بيبسي",
+          description: "مشروب بيبسي غازي",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 62,
+          name: "سبرايت",
+          description: "مشروب سبرايت غازي",
+          price: 500,
+          category: "مشروبات غازية",
+          image: "https://images.unsplash.com/photo-1554866585-cd94860890b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+
+        // سلطات (6 منتجات)
+        {
+          id: 63,
+          name: "سلطة سيزر",
+          description: "سلطة سيزر مع دجاج",
+          price: 2200,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 64,
+          name: "سلطة خضار",
+          description: "سلطة خضار طازجة",
+          price: 1500,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 65,
+          name: "سلطة فواكه",
+          description: "سلطة فواكه طازجة",
+          price: 1800,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 66,
+          name: "سلطة التونة",
+          description: "سلطة تونة مع خضار",
+          price: 2000,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 67,
+          name: "سلطة الدجاج",
+          description: "سلطة دجاج مشوي",
+          price: 2200,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        },
+        {
+          id: 68,
+          name: "سلطة الكينوا",
+          description: "سلطة كينوا مع خضار",
+          price: 1900,
+          category: "سلطات",
+          image: "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+        }
+      ];
+    }
+
+    // تهيئة واجهة المستخدم
+    function initUI() {
+      // إخفاء مؤشر التحميل
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 1000);
+    }
+
+    // حفظ البيانات المحلية
+    function saveLocalData() {
+      localStorage.setItem('kafeteria_products', JSON.stringify(products));
+      localStorage.setItem('kafeteria_categories', JSON.stringify(categories));
+      localStorage.setItem('kafeteria_hero', JSON.stringify(heroData));
+      localStorage.setItem('kafeteria_features', JSON.stringify(featuresData));
+      localStorage.setItem('cart', JSON.stringify(cart));
+      localStorage.setItem('kafeteria_orders', JSON.stringify(orders));
+    }
+
+    // مزامنة البيانات إلى السحابة
+    async function syncToCloud() {
+      try {
+        const data = {
+          products,
+          categories,
+          heroData,
+          featuresData,
+          orders,
+          syncedAt: new Date().toISOString()
+        };
+        
+        // حفظ في localStorage كنسخة احتياطية
+        localStorage.setItem(CLOUD_STORAGE_KEY, JSON.stringify(data));
+        
+        // هنا يمكن إضافة كود للاتصال بخدمة سحابية حقيقية
+        // مثل Firebase أو خدمة API خاصة
+        
+        showNotification('✅ تم مزامنة البيانات بنجاح!');
+        return true;
+      } catch (error) {
+        showNotification('❌ فشل في مزامنة البيانات', 'error');
+        return false;
+      }
+    }
+
+    // تحميل البيانات من السحابة
+    async function loadFromCloud() {
+      try {
+        // محاولة تحميل من localStorage أولاً
+        const cloudData = localStorage.getItem(CLOUD_STORAGE_KEY);
+        
+        if (cloudData) {
+          const data = JSON.parse(cloudData);
+          
+          if (data.products) products = data.products;
+          if (data.categories) categories = data.categories;
+          if (data.heroData) heroData = data.heroData;
+          if (data.featuresData) featuresData = data.featuresData;
+          if (data.orders) orders = data.orders;
+          
+          return true;
+        }
+        
+        return false;
+      } catch (error) {
+        console.error('Error loading from cloud:', error);
+        return false;
+      }
+    }
+
+    // حفظ البيانات مع المزامنة
+    function saveData() {
+      saveLocalData();
+      
+      // إذا كان المالك مسجل الدخول، مزامنة مع السحابة
+      if (isAdminLoggedIn) {
+        syncToCloud();
+      }
+    }
+
+    // تحديث قسم المقدمة
+    function updateHeroSection() {
+      document.getElementById('heroTitle').textContent = heroData.title;
+      document.getElementById('heroText').textContent = heroData.text;
+      document.getElementById('heroButton').textContent = heroData.button;
+      
+      const heroSection = document.getElementById('heroSection');
+      heroSection.style.background = `linear-gradient(rgba(0,0,0,${heroData.opacity/100}), rgba(0,0,0,${heroData.opacity/100})), url('${heroData.image}')`;
+      heroSection.style.backgroundSize = 'cover';
+      heroSection.style.backgroundPosition = 'center';
+      
+      // تحديث المعاينة في لوحة التحكم
+      document.getElementById('heroPreviewTitle').textContent = heroData.title;
+      document.getElementById('heroPreviewText').textContent = heroData.text;
+      document.getElementById('heroPreviewButton').textContent = heroData.button;
+      document.getElementById('heroPreviewImage').src = heroData.image;
+      
+      // تحديث حقول التعديل
+      if (document.getElementById('heroTitleInput')) {
+        document.getElementById('heroTitleInput').value = heroData.title;
+        document.getElementById('heroTextInput').value = heroData.text;
+        document.getElementById('heroButtonInput').value = heroData.button;
+        document.getElementById('heroImagePreview').src = heroData.image;
+        document.getElementById('heroOpacity').value = heroData.opacity;
+        document.getElementById('opacityValue').textContent = heroData.opacity + '%';
+        
+        if (heroData.image) {
+          document.getElementById('heroImagePreviewContainer').classList.add('active');
+          document.getElementById('heroUploadPlaceholder').style.display = 'none';
+        }
+      }
+    }
+
+    // تحميل الميزات الإضافية
+    function loadFeatures() {
+      const featuresContainer = document.getElementById('featuresSection');
+      const featuresManagement = document.getElementById('featuresManagement');
+      
+      if (!featuresContainer) return;
+      
+      featuresContainer.innerHTML = '';
+      featuresManagement.innerHTML = '';
+      
+      featuresData.forEach((feature, index) => {
+        // عرض الميزات في الصفحة
+        const featureElement = document.createElement('div');
+        featureElement.style.cssText = 'background: white; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);';
+        featureElement.innerHTML = `
+          <div style="font-size: 3rem; margin-bottom: 15px;">${feature.icon}</div>
+          <h3 style="color: #38C172; margin-bottom: 10px;">${feature.title}</h3>
+          <p>${feature.text}</p>
+        `;
+        featuresContainer.appendChild(featureElement);
+        
+        // عرض الميزات في لوحة التحكم
+        if (featuresManagement) {
+          const managementElement = document.createElement('div');
+          managementElement.className = 'form-group';
+          managementElement.innerHTML = `
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 10px;">
+              <input type="text" class="form-input" value="${feature.icon}" placeholder="رمز" style="width: 80px;" onchange="updateFeature(${index}, 'icon', this.value)">
+              <input type="text" class="form-input" value="${feature.title}" placeholder="العنوان" style="flex: 2;" onchange="updateFeature(${index}, 'title', this.value)">
+              <button class="btn btn-danger" onclick="deleteFeature(${index})" style="padding: 8px 15px;">🗑️</button>
+            </div>
+            <input type="text" class="form-input" value="${feature.text}" placeholder="النص" onchange="updateFeature(${index}, 'text', this.value)">
+          `;
+          featuresManagement.appendChild(managementElement);
+        }
+      });
+      
+      // زر إضافة ميزة جديدة
+      if (featuresManagement) {
+        const addFeatureBtn = document.createElement('button');
+        addFeatureBtn.className = 'btn btn-primary';
+        addFeatureBtn.textContent = '➕ إضافة ميزة جديدة';
+        addFeatureBtn.onclick = addNewFeature;
+        featuresManagement.appendChild(addFeatureBtn);
+      }
+    }
+
+    // تحديث الميزة
+    function updateFeature(index, field, value) {
+      featuresData[index][field] = value;
+      saveData();
+      loadFeatures();
+    }
+
+    // حذف الميزة
+    function deleteFeature(index) {
+      if (confirm('هل تريد حذف هذه الميزة؟')) {
+        featuresData.splice(index, 1);
+        saveData();
+        loadFeatures();
+      }
+    }
+
+    // إضافة ميزة جديدة
+    function addNewFeature() {
+      featuresData.push({
+        icon: "✨",
+        title: "ميزة جديدة",
+        text: "وصف الميزة الجديدة"
+      });
+      saveData();
+      loadFeatures();
+    }
+
+    // تحديث الإحصائيات
+    function updateStats() {
+      if (document.getElementById('totalProducts')) {
+        document.getElementById('totalProducts').textContent = products.length;
+        document.getElementById('totalCategories').textContent = categories.length;
+        document.getElementById('totalOrders').textContent = orders.length;
+      }
+    }
+
+    // تهيئة التصنيفات
+    function initCategories() {
+      const categoriesContainer = document.getElementById('categories');
+      if (!categoriesContainer) return;
+      
+      categoriesContainer.innerHTML = '';
+      
+      const allCategories = ['الكل', ...categories];
+      
+      allCategories.forEach(category => {
+        const button = document.createElement('button');
+        button.className = 'category-btn';
+        button.textContent = category;
+        if (category === 'الكل') button.classList.add('active');
+        
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          button.classList.add('active');
+          currentCategory = category;
+          loadProducts();
+        });
+        
+        categoriesContainer.appendChild(button);
+      });
+    }
+
+    // تحميل المنتجات
+    function loadProducts() {
+      const container = document.getElementById('product-container');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      
+      const filteredProducts = currentCategory === 'الكل' 
+        ? products 
+        : products.filter(product => product.category === currentCategory);
+      
+      if (filteredProducts.length === 0) {
+        container.innerHTML = '<div class="text-center" style="grid-column: 1/-1; padding: 40px; color: #666;">لا توجد منتجات في هذا التصنيف</div>';
+        return;
+      }
+      
+      filteredProducts.forEach(product => {
+        const productElement = document.createElement('div');
+        productElement.className = 'product-card';
+        
+        // التحكم في عرض أزرار الإدارة
+        const adminControls = isAdminLoggedIn ? `
+          <div class="admin-controls">
+            <button class="admin-btn edit-btn" onclick="openEditModal(${product.id})">✏️</button>
+            <button class="admin-btn delete-btn" onclick="deleteProduct(${product.id})">🗑️</button>
+          </div>
+        ` : '';
+        
+        productElement.innerHTML = `
+          ${adminControls}
+          <div class="product-image">
+            <img src="${product.image || 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80'}" alt="${product.name}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">${product.name}</h3>
+            <p class="product-desc">${product.description}</p>
+            <div class="product-meta">
+              <span class="product-price">${product.price} ريال</span>
+              <button class="btn-add-to-cart" data-id="${product.id}">
+                + إضافة
+              </button>
+            </div>
+          </div>
+        `;
+        
+        container.appendChild(productElement);
+      });
+      
+      document.querySelectorAll('.btn-add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+          const productId = parseInt(this.getAttribute('data-id'));
+          addToCart(productId);
+        });
+      });
+    }
+
+    // إضافة إلى السلة
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      const existingItem = cart.find(item => item.id === productId);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          ...product,
+          quantity: 1
+        });
+      }
+      
+      saveLocalData();
+      updateCartCount();
+      showNotification('تمت إضافة المنتج إلى السلة ✓');
+    }
+
+    // تحديث عداد السلة
+    function updateCartCount() {
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      document.getElementById('cartCount').textContent = count;
+    }
+
+    // عرض الإشعار
+    function showNotification(message, type = 'success') {
+      const notification = document.createElement('div');
+      notification.className = 'notification' + (type === 'error' ? ' error' : '');
+      notification.textContent = message;
+      
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // تهيئة لوحة التحكم
+    function initAdminPanel() {
+      const adminPanelBtn = document.getElementById('adminPanelBtn');
+      const adminPanel = document.getElementById('adminPanel');
+      const closeAdminBtn = document.getElementById('closeAdminBtn');
+      
+      if (!adminPanelBtn || !adminPanel) return;
+      
+      adminPanelBtn.addEventListener('click', function() {
+        if (!isAdminLoggedIn) {
+          showLoginModal();
+          return;
+        }
+        
+        adminPanel.classList.add('active');
+        updateAdminProductsList();
+        updateAdminCategories();
+        updateStats();
+        updateHeroSection();
+        loadFeatures();
+      });
+      
+      closeAdminBtn.addEventListener('click', function() {
+        adminPanel.classList.remove('active');
+      });
+      
+      // التبويبات
+      document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', function() {
+          const tabId = this.getAttribute('data-tab');
+          
+          document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+          });
+          
+          document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          this.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      // إدارة المقدمة
+      const heroForm = document.getElementById('heroForm');
+      if (heroForm) {
+        heroForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          heroData.title = document.getElementById('heroTitleInput').value;
+          heroData.text = document.getElementById('heroTextInput').value;
+          heroData.button = document.getElementById('heroButtonInput').value;
+          heroData.opacity = document.getElementById('heroOpacity').value;
+          
+          saveData();
+          updateHeroSection();
+          showNotification('تم حفظ تعديلات المقدمة بنجاح! ✓');
+        });
+      }
+      
+      // تغيير شريط التعتيم
+      const heroOpacity = document.getElementById('heroOpacity');
+      if (heroOpacity) {
+        heroOpacity.addEventListener('input', function() {
+          document.getElementById('opacityValue').textContent = this.value + '%';
+        });
+      }
+      
+      // إضافة منتج جديد
+      const addProductForm = document.getElementById('addProductForm');
+      if (addProductForm) {
+        addProductForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('productName').value;
+          const description = document.getElementById('productDescription').value;
+          const price = parseInt(document.getElementById('productPrice').value);
+          const category = document.getElementById('productCategory').value;
+          const image = document.getElementById('imagePreview').src;
+          
+          if (!name || !description || !price || !category || !image) {
+            alert('الرجاء ملء جميع الحقول المطلوبة!');
+            return;
+          }
+          
+          const newProduct = {
+            id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+            name,
+            description,
+            price,
+            category,
+            image
+          };
+          
+          products.push(newProduct);
+          saveData();
+          loadProducts();
+          updateStats();
+          
+          showNotification('تمت إضافة المنتج بنجاح! ✓');
+          clearAddForm();
+          document.querySelector('[data-tab="products-tab"]').click();
+        });
+      }
+      
+      // إضافة تصنيف جديد
+      const addCategoryBtn = document.getElementById('addCategoryBtn');
+      if (addCategoryBtn) {
+        addCategoryBtn.addEventListener('click', function() {
+          const newCategory = document.getElementById('newCategory').value.trim();
+          
+          if (!newCategory) {
+            alert('الرجاء إدخال اسم التصنيف!');
+            return;
+          }
+          
+          if (categories.includes(newCategory)) {
+            alert('هذا التصنيف موجود بالفعل!');
+            return;
+          }
+          
+          categories.push(newCategory);
+          saveData();
+          updateAdminCategories();
+          initCategories();
+          document.getElementById('newCategory').value = '';
+          showNotification('تمت إضافة التصنيف بنجاح! ✓');
+        });
+      }
+    }
+
+    // تهيئة رفع الصور للمنتجات
+    function initImageUpload() {
+      const imageUploadArea = document.getElementById('imageUploadArea');
+      const imageFile = document.getElementById('imageFile');
+      const imagePreview = document.getElementById('imagePreview');
+      const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+      const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+      
+      if (!imageUploadArea) return;
+      
+      imageUploadArea.addEventListener('click', function() {
+        imageFile.click();
+      });
+      
+      imageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            imagePreview.src = e.target.result;
+            imagePreviewContainer.classList.add('active');
+            uploadPlaceholder.style.display = 'none';
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+    }
+
+    // تهيئة رفع صورة المقدمة
+    function initHeroImageUpload() {
+      const heroImageUpload = document.getElementById('heroImageUpload');
+      const heroImageFile = document.getElementById('heroImageFile');
+      const heroImagePreview = document.getElementById('heroImagePreview');
+      const heroImagePreviewContainer = document.getElementById('heroImagePreviewContainer');
+      const heroUploadPlaceholder = document.getElementById('heroUploadPlaceholder');
+      
+      if (!heroImageUpload) return;
+      
+      heroImageUpload.addEventListener('click', function() {
+        heroImageFile.click();
+      });
+      
+      heroImageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            heroData.image = e.target.result;
+            heroImagePreview.src = e.target.result;
+            heroImagePreviewContainer.classList.add('active');
+            heroUploadPlaceholder.style.display = 'none';
+            
+            // حفظ مباشرة
+            saveData();
+            updateHeroSection();
+            showNotification('تم تغيير صورة المقدمة بنجاح! ✓');
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+    }
+
+    // تحديث قائمة المنتجات في لوحة التحكم
+    function updateAdminProductsList() {
+      const container = document.getElementById('adminProductsList');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      
+      if (products.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">لا توجد منتجات حتى الآن</div>';
+        return;
+      }
+      
+      products.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <div class="product-item-info">
+            <h4>${product.name}</h4>
+            <p>${product.category} | ${product.price} ريال</p>
+          </div>
+          <div class="product-item-actions">
+            <button class="btn btn-primary" onclick="openEditModal(${product.id})">✏️ تعديل</button>
+            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">🗑️ حذف</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    // تحديث التصنيفات في لوحة التحكم
+    function updateAdminCategories() {
+      const categoriesSelects = [
+        document.getElementById('productCategory'),
+        document.getElementById('editProductCategory'),
+        document.getElementById('bulkCategory')
+      ];
+      
+      categoriesSelects.forEach(select => {
+        if (select) {
+          select.innerHTML = '<option value="">اختر تصنيف</option>' +
+            categories.map(cat => `<option value="${cat}">${cat}</option>`).join('');
+        }
+      });
+      
+      const categoriesList = document.getElementById('categoriesList');
+      if (categoriesList) {
+        categoriesList.innerHTML = '';
+        
+        categories.forEach((category, index) => {
+          const categoryElement = document.createElement('div');
+          categoryElement.className = 'category-item';
+          categoryElement.style.cssText = `
+            background: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #38C172;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          `;
+          
+          categoryElement.innerHTML = `
+            <span>${category}</span>
+            <button onclick="deleteCategory(${index})" style="background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 1.2rem;">×</button>
+          `;
+          
+          categoriesList.appendChild(categoryElement);
+        });
+      }
+    }
+
+    // فتح نافذة تعديل المنتج
+    function openEditModal(productId) {
+      if (!isAdminLoggedIn) {
+        showLoginModal();
+        return;
+      }
+      
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+      
+      document.getElementById('editProductId').value = product.id;
+      document.getElementById('editProductName').value = product.name;
+      document.getElementById('editProductDescription').value = product.description;
+      document.getElementById('editProductPrice').value = product.price;
+      document.getElementById('editProductCategory').value = product.category;
+      
+      const editImagePreview = document.getElementById('editImagePreview');
+      const editImagePreviewContainer = document.getElementById('editImagePreviewContainer');
+      const editUploadPlaceholder = document.getElementById('editUploadPlaceholder');
+      
+      editImagePreview.src = product.image;
+      editImagePreviewContainer.classList.add('active');
+      editUploadPlaceholder.style.display = 'none';
+      
+      // تهيئة رفع الصور للتعديل
+      const editImageUploadArea = document.getElementById('editImageUploadArea');
+      const editImageFile = document.getElementById('editImageFile');
+      
+      editImageUploadArea.addEventListener('click', function() {
+        editImageFile.click();
+      });
+      
+      editImageFile.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            editImagePreview.src = e.target.result;
+            editImagePreviewContainer.classList.add('active');
+            editUploadPlaceholder.style.display = 'none';
+          };
+          
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+      
+      document.getElementById('editModal').classList.add('active');
+    }
+
+    // إغلاق نافذة تعديل المنتج
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('active');
+    }
+
+    // حفظ تعديلات المنتج
+    const editProductForm = document.getElementById('editProductForm');
+    if (editProductForm) {
+      editProductForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const productId = parseInt(document.getElementById('editProductId').value);
+        const productIndex = products.findIndex(p => p.id === productId);
+        
+        if (productIndex === -1) return;
+        
+        products[productIndex] = {
+          id: productId,
+          name: document.getElementById('editProductName').value,
+          description: document.getElementById('editProductDescription').value,
+          price: parseInt(document.getElementById('editProductPrice').value),
+          category: document.getElementById('editProductCategory').value,
+          image: document.getElementById('editImagePreview').src
+        };
+        
+        saveData();
+        loadProducts();
+        updateAdminProductsList();
+        updateStats();
+        closeEditModal();
+        showNotification('تم تحديث المنتج بنجاح! ✓');
+      });
+    }
+
+    // حذف المنتج
+    function deleteProduct(productId) {
+      if (!isAdminLoggedIn) {
+        showLoginModal();
+        return;
+      }
+      
+      if (!confirm('هل أنت متأكد من حذف هذا المنتج؟')) return;
+      
+      products = products.filter(p => p.id !== productId);
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification('تم حذف المنتج بنجاح! ✓');
+    }
+
+    // حذف التصنيف
+    function deleteCategory(index) {
+      if (!confirm('هل أنت متأكد من حذف هذا التصنيف؟ سيتم حذف جميع المنتجات المرتبطة به.')) return;
+      
+      const category = categories[index];
+      
+      // حذف المنتجات المرتبطة بالتصنيف
+      products = products.filter(p => p.category !== category);
+      
+      // حذف التصنيف
+      categories.splice(index, 1);
+      
+      saveData();
+      updateAdminCategories();
+      updateAdminProductsList();
+      loadProducts();
+      initCategories();
+      updateStats();
+      showNotification('تم حذف التصنيف وجميع منتجاته بنجاح! ✓');
+    }
+
+    // مسح نموذج الإضافة
+    function clearAddForm() {
+      document.getElementById('addProductForm').reset();
+      document.getElementById('imagePreview').src = '';
+      document.getElementById('imagePreviewContainer').classList.remove('active');
+      document.getElementById('uploadPlaceholder').style.display = 'block';
+    }
+
+    // إزالة الصورة
+    function removeImage() {
+      document.getElementById('imagePreview').src = '';
+      document.getElementById('imagePreviewContainer').classList.remove('active');
+      document.getElementById('uploadPlaceholder').style.display = 'block';
+      document.getElementById('imageFile').value = '';
+    }
+
+    // إزالة صورة المقدمة
+    function removeHeroImage() {
+      heroData.image = 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80';
+      saveData();
+      updateHeroSection();
+      showNotification('تم إعادة تعيين صورة المقدمة! ✓');
+    }
+
+    // إزالة الصورة في التعديل
+    function removeEditImage() {
+      const editImagePreview = document.getElementById('editImagePreview');
+      const editImagePreviewContainer = document.getElementById('editImagePreviewContainer');
+      const editUploadPlaceholder = document.getElementById('editUploadPlaceholder');
+      
+      editImagePreview.src = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
+      editImagePreviewContainer.classList.remove('active');
+      editUploadPlaceholder.style.display = 'block';
+    }
+
+    // تحديث المنتجات
+    function refreshProducts() {
+      loadProducts();
+      showNotification('تم تحديث قائمة المنتجات! ✓');
+    }
+
+    // وظائف السلة والطلبات
+    document.getElementById('openCartBtn').addEventListener('click', function() {
+      if (cart.length === 0) {
+        alert('السلة فارغة، أضف بعض المنتجات أولاً!');
+        return;
+      }
+      
+      let cartContent = `
+        <div style="background: white; padding: 30px; border-radius: 12px; max-width: 500px; margin: 0 auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="color: #38C172;">🛒 سلة الطلب</h2>
+            <button onclick="closeCart()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">✕</button>
+          </div>
+      `;
+      
+      let subtotal = 0;
+      
+      cart.forEach(item => {
+        subtotal += item.price * item.quantity;
+        cartContent += `
+          <div style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+            <div style="flex: 1;">
+              <h4 style="margin: 0 0 5px 0; color: #333;">${item.name}</h4>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="color: #38C172; font-weight: 700;">${item.price} ريال × ${item.quantity}</span>
+                <button onclick="removeFromCart(${item.id})" style="background: #fee; color: #e74c3c; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">إزالة</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      
+      const delivery = 500;
+      const total = subtotal + delivery;
+      
+      cartContent += `
+        <div style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #eee;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span>المجموع:</span>
+            <span style="font-weight: 700;">${subtotal} ريال</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+            <span>رسوم التوصيل:</span>
+            <span style="font-weight: 700;">${delivery} ريال</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; padding-top: 15px; border-top: 2px solid #38C172; font-size: 1.2rem; font-weight: 700;">
+            <span>الإجمالي النهائي:</span>
+            <span style="color: #38C172;">${total} ريال</span>
+          </div>
+          <div style="margin-top: 25px;">
+            <button onclick="confirmOrder()" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">
+              📞 تأكيد الطلب
+            </button>
+          </div>
+          <p style="text-align: center; margin-top: 15px; color: #666; font-size: 0.9rem;">
+            سيتصل بك فريقنا خلال دقائق لتأكيد طلبك
+          </p>
+        </div>
+      </div>
+      `;
+      
+      const modal = document.createElement('div');
+      modal.className = 'admin-panel active';
+      modal.innerHTML = cartContent;
+      document.body.appendChild(modal);
+    });
+
+    function removeFromCart(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      saveLocalData();
+      updateCartCount();
+      
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+      
+      if (cart.length === 0) {
+        showNotification('تم إفراغ السلة');
+      } else {
+        document.getElementById('openCartBtn').click();
+      }
+    }
+
+    function confirmOrder() {
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0) + 500;
+      
+      const phone = '+967730528609';
+      const orderDetails = cart.map(item => 
+        `${item.name} × ${item.quantity} - ${item.price * item.quantity} ريال`
+      ).join('\n');
+      
+      const order = {
+        id: Date.now(),
+        items: [...cart],
+        total: total,
+        date: new Date().toISOString(),
+        status: 'جديد'
+      };
+      
+      orders.push(order);
+      saveData();
+      
+      const whatsappMessage = `مرحبًا، أرغب في طلب:\n\n${orderDetails}\n\nالمجموع: ${total} ريال`;
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
+      
+      cart = [];
+      saveLocalData();
+      updateCartCount();
+      
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+      
+      showNotification('تم تأكيد الطلب! سيتصل بك فريقنا قريبًا ✓');
+    }
+
+    function closeCart() {
+      const modal = document.querySelector('.admin-panel.active');
+      if (modal) modal.remove();
+    }
+
+    // وظائف لوحة التحكم الإضافية
+    function selectAllProducts() {
+      const category = document.getElementById('bulkCategory').value;
+      
+      selectedProductsForBulk = category 
+        ? products.filter(p => p.category === category).map(p => p.id)
+        : products.map(p => p.id);
+      
+      updateSelectedProductsDisplay();
+    }
+
+    function deselectAllProducts() {
+      selectedProductsForBulk = [];
+      updateSelectedProductsDisplay();
+    }
+
+    function updateSelectedProductsDisplay() {
+      const container = document.getElementById('selectedProducts');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      
+      if (selectedProductsForBulk.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 20px; color: #666;">لم يتم تحديد أي منتجات</div>';
+        return;
+      }
+      
+      selectedProductsForBulk.forEach(productId => {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        
+        const productElement = document.createElement('div');
+        productElement.style.cssText = `
+          padding: 8px 12px;
+          background: white;
+          border-radius: 6px;
+          margin-bottom: 5px;
+          border-left: 3px solid #38C172;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        `;
+        
+        productElement.innerHTML = `
+          <span>${product.name}</span>
+          <span style="color: #38C172; font-weight: 700;">${product.price} ريال</span>
+        `;
+        
+        container.appendChild(productElement);
+      });
+    }
+
+    function updateBulkPrices() {
+      const newPrice = parseInt(document.getElementById('bulkPrice').value);
+      
+      if (!newPrice || newPrice < 1) {
+        alert('الرجاء إدخال سعر صحيح!');
+        return;
+      }
+      
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      if (!confirm(`هل تريد تحديث ${selectedProductsForBulk.length} منتج بسعر ${newPrice} ريال؟`)) return;
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id)) {
+          product.price = newPrice;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم تحديث ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      
+      selectedProductsForBulk = [];
+      document.getElementById('bulkPrice').value = '';
+      updateSelectedProductsDisplay();
+    }
+
+    function increaseBulkPrices(amount) {
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id)) {
+          product.price += amount;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم زيادة أسعار ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      updateSelectedProductsDisplay();
+    }
+
+    function decreaseBulkPrices(amount) {
+      if (selectedProductsForBulk.length === 0) {
+        alert('الرجاء تحديد منتجات أولاً!');
+        return;
+      }
+      
+      products.forEach(product => {
+        if (selectedProductsForBulk.includes(product.id) && product.price > amount) {
+          product.price -= amount;
+        }
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم خصم أسعار ${selectedProductsForBulk.length} منتج بنجاح! ✓`);
+      updateSelectedProductsDisplay();
+    }
+
+    function updateAllPrices() {
+      const percentage = parseInt(document.getElementById('globalPriceUpdate').value);
+      
+      if (!percentage) {
+        alert('الرجاء إدخال نسبة مئوية!');
+        return;
+      }
+      
+      if (!confirm(`هل تريد تحديث جميع الأسعار بنسبة ${percentage}%؟`)) return;
+      
+      products.forEach(product => {
+        const newPrice = Math.round(product.price * (1 + percentage / 100));
+        product.price = newPrice > 0 ? newPrice : 1;
+      });
+      
+      saveData();
+      loadProducts();
+      updateAdminProductsList();
+      updateStats();
+      showNotification(`تم تحديث جميع الأسعار بنسبة ${percentage}% بنجاح! ✓`);
+      document.getElementById('globalPriceUpdate').value = '';
+    }
+
+    function exportData() {
+      const data = {
+        products,
+        categories,
+        heroData,
+        featuresData,
+        orders,
+        exportedAt: new Date().toISOString()
+      };
+      
+      const dataStr = JSON.stringify(data, null, 2);
+      const dataBlob = new Blob([dataStr], { type: 'application/json' });
+      
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(dataBlob);
+      link.download = `kafeteria-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      link.click();
+      
+      showNotification('تم تصدير البيانات بنجاح! ✓');
+    }
+
+    function importData() {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      
+      input.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          
+          reader.onload = function(e) {
+            try {
+              const data = JSON.parse(e.target.result);
+              
+              if (!confirm('هل تريد استبدال جميع البيانات الحالية؟ سيتم حذف جميع المنتجات الحالية.')) return;
+              
+              if (data.products) products = data.products;
+              if (data.categories) categories = data.categories;
+              if (data.heroData) heroData = data.heroData;
+              if (data.featuresData) featuresData = data.featuresData;
+              if (data.orders) orders = data.orders;
+              
+              saveData();
+              loadProducts();
+              initCategories();
+              updateAdminProductsList();
+              updateAdminCategories();
+              updateHeroSection();
+              loadFeatures();
+              updateStats();
+              
+              showNotification('تم استيراد البيانات بنجاح! ✓');
+            } catch (error) {
+              alert('ملف غير صالح! الرجاء اختيار ملف نسخ احتياطي صحيح.');
+            }
+          };
+          
+          reader.readAsText(e.target.files[0]);
+        }
+      });
+      
+      input.click();
+    }
+
+    function filterProducts() {
+      const searchTerm = document.getElementById('searchProducts').value.toLowerCase();
+      const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(searchTerm) ||
+        product.description.toLowerCase().includes(searchTerm) ||
+        product.category.toLowerCase().includes(searchTerm)
+      );
+      
+      const container = document.getElementById('adminProductsList');
+      if (!container) return;
+      
+      container.innerHTML = '';
+      
+      if (filteredProducts.length === 0) {
+        container.innerHTML = '<div style="text-align: center; padding: 30px; color: #666;">لا توجد نتائج للبحث</div>';
+        return;
+      }
+      
+      filteredProducts.forEach(product => {
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <div class="product-item-info">
+            <h4>${product.name}</h4>
+            <p>${product.category} | ${product.price} ريال</p>
+          </div>
+          <div class="product-item-actions">
+            <button class="btn btn-primary" onclick="openEditModal(${product.id})">✏️ تعديل</button>
+            <button class="btn btn-danger" onclick="deleteProduct(${product.id})">🗑️ حذف</button>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>
