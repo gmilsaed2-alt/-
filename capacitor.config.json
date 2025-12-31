@@ -1,9 +1,0 @@
-{
-  "appId": "com.alkheir.cafeteria",
-  "appName": "كافتيريا الخير",
-  "webDir": ".",
-  "bundledWebRuntime": false,
-  "server": {
-    "androidScheme": "https"
-  }
-}
