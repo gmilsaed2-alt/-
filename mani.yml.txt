@@ -1,5 +1,0 @@
-projects: {}
-tasks:
-  pull:
-    desc: git pull
-    cmd: git pull
