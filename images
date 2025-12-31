@@ -4,3 +4,8 @@ images/
 │  ├─ orange-juice.jpg
 │  ├─ apple-juice.jpg
 │  ├─ chicken-sandwich.jpg
+│  └─ kunafa.jpg
+└─ icons/
+   ├─ favicon.png
+   ├─ icon-192.png
+   └─ icon-512.png
